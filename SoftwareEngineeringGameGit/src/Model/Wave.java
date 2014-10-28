@@ -3,12 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package softwareengineeringgamegit;
+package Model;
+
+import java.util.ArrayList;
 
 /**
  *
  * @author Jordan
  */
-public class PathCastle extends GridPath {
+public class Wave {
+    
+    ArrayList<Creep> creepList;
+    int spawnRate;
     
 }

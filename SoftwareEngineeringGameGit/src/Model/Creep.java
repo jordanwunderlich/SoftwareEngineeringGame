@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package softwareengineeringgamegit;
+package Model;
 
 /**
  *
@@ -15,6 +15,9 @@ public class Creep{
         this.health=health;
     }
     
+    /**
+     * 
+     */
     private void displayHealth(){
         throw new UnsupportedOperationException("Not supported yet.");
     }

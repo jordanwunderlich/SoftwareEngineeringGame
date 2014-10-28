@@ -3,14 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package softwareengineeringgamegit;
+package Model;
 
 /**
  *
  * @author Jordan
  */
-public class GridEmpty extends Grid {
-    
-    
+public class PathEntry extends GridPath {
     
 }

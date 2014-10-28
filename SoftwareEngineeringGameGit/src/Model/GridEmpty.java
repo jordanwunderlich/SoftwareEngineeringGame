@@ -3,17 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package softwareengineeringgamegit;
-
-import java.util.ArrayList;
+package Model;
 
 /**
  *
  * @author Jordan
  */
-public class Wave {
+public class GridEmpty extends Grid {
     
-    ArrayList<Creep> creepList;
-    int spawnRate;
+    
     
 }

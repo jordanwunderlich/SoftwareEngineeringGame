@@ -3,15 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package softwareengineeringgamegit;
+package Model;
 
 /**
  *
  * @author Jordan
  */
-public class Projectile {
-    
-    int damage;
-    boolean aoe;
+public class PathCastle extends GridPath {
     
 }

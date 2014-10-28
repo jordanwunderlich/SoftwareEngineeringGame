@@ -3,12 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package softwareengineeringgamegit;
+package Model;
+
+import java.util.ArrayList;
 
 /**
  *
  * @author Jordan
  */
-public class PathEntry extends GridPath {
+public class Level {
+    
+    ArrayList<Wave> waves;
+    int scrap;
+    int gold;
+    int number;
+    boolean available;
     
 }
