@@ -11,6 +11,10 @@ package softwareengineeringgamegit;
  */
 public class Creep{
     
+    public Creep (int health){
+        this.health=health;
+    }
+    
     private void displayHealth(){
         throw new UnsupportedOperationException("Not supported yet.");
     }
