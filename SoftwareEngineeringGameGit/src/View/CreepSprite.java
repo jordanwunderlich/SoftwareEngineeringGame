@@ -17,5 +17,6 @@ public class CreepSprite {
         this.creep=creep;
     }
     
-    Creep creep;
+    private Creep creep;
+    private Sprite sprite;
 }
