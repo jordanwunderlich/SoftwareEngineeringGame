@@ -9,11 +9,7 @@ package Model;
  *
  * @author Jordan
  */
-public class Creep{
-    
-    public Creep (int health){
-        this.health=health;
-    }
+public abstract class Creep{
     
     /**
      * 
@@ -22,7 +18,7 @@ public class Creep{
         throw new UnsupportedOperationException("Not supported yet.");
     }
     
-    private void addScrapDrop(){
+    private void addScrap(){
         throw new UnsupportedOperationException("Not supported yet.");
     }
     
@@ -32,6 +28,7 @@ public class Creep{
     
     int health;
     int speed;
-    int scrapDrop;
+    int scrap;
+    int plunder;
     
 }

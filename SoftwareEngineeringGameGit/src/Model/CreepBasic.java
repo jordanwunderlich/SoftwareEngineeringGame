@@ -10,10 +10,13 @@ package Model;
  *
  * @author Jason
  */
-public class Model {
+public class CreepBasic extends Creep{
     
-    public Model(){
-        
+    public CreepBasic(){
+        health = 5;
+        speed = 2;
+        plunder = 3;
+        scrap = 20;
     }
-   
+    
 }

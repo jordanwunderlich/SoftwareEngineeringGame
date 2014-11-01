@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author Jordan
  */
 public class Level {
-    
+    ArrayList<Creep> creeps;
     ArrayList<Wave> waves;
     int scrap;
     int gold;

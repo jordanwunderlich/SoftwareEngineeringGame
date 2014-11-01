@@ -10,10 +10,6 @@ package Model;
  *
  * @author Jason
  */
-public class Model {
+public class TowerBasic {
     
-    public Model(){
-        
-    }
-   
 }

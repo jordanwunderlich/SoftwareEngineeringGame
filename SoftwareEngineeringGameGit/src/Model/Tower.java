@@ -9,7 +9,7 @@ package Model;
  *
  * @author Jordan
  */
-public class Tower {
+public abstract class Tower {
     
     private void openTowerMenu(){
         throw new UnsupportedOperationException("Not supported yet.");
@@ -33,7 +33,8 @@ public class Tower {
     
     int damage;
     int range;
-    int value;
+    int cost;
+    int rof;
     boolean slows;
     boolean aoe;
     
