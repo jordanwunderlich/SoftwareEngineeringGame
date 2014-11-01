@@ -3,23 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package States;
+package Manager;
 
 /**
  *
  * @author Jordan
  */
-public class StartState {
+public class MainMenuState extends BaseState {
     
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
-    private void displaySplash(){
+    private void displaylevelSelect(){
         throw new UnsupportedOperationException("Not supported yet.");
     }
     
-    private void displayMenu(){
+    private void load(){
         throw new UnsupportedOperationException("Not supported yet.");
     }
     

@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package States;
+package Manager;
 
 /**
  *
  * @author Jordan
  */
-public class LevelSelectState extends BaseState{
+public class PreparationModeState extends BaseState{
     
 }
