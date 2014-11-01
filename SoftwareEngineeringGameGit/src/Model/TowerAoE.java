@@ -10,14 +10,15 @@ package Model;
  *
  * @author Jason
  */
-public class TowerBasic extends Tower {
+public class TowerAoE extends Tower {
     
-    public TowerBasic(){
+    public TowerAoE(){
         
-     damage = 3;
-     cost = 100;
-     rof = 1;
-     range = 5;
-    
+     damage = 4;
+     cost = 300;
+     rof = 2;
+     range = 7;
+     aoe = true;
     }
+    
 }

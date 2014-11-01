@@ -10,14 +10,13 @@ package Model;
  *
  * @author Jason
  */
-public class TowerBasic extends Tower {
+public class CreepBossMulti extends Creep {
     
-    public TowerBasic(){
-        
-     damage = 3;
-     cost = 100;
-     rof = 1;
-     range = 5;
-    
+     public CreepBossMulti(){
+        health = 100;
+        speed = 2;
+        plunder = 50;
+        scrap = 400;
     }
+    
 }

@@ -10,14 +10,15 @@ package Model;
  *
  * @author Jason
  */
-public class TowerBasic extends Tower {
+public class TowerSlow extends Tower {
     
-    public TowerBasic(){
+    public TowerSlow(){
         
-     damage = 3;
-     cost = 100;
+     damage = 1;
+     cost = 150;
      rof = 1;
      range = 5;
-    
+     slows = true;
     }
+    
 }
