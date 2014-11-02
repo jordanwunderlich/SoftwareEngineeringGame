@@ -24,7 +24,7 @@ public class MenuDisplay extends View {
         }
     }
     
-    Menu menu;
+    private Menu menu;
 
     // creates visuals for the menu screens:
     // main menu

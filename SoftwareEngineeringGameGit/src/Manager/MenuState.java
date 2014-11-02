@@ -29,6 +29,6 @@ public class MenuState extends State {
         throw new UnsupportedOperationException("Not supported yet.");
     }
     
-    Menu menu;
+    private Menu menu;
     
 }

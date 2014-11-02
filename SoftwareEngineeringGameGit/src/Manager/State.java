@@ -31,8 +31,8 @@ public abstract class State {
         return controller;
     }
     
-    Controller controller;
-    Model model;
-    View view;
+    protected Controller controller;
+    protected Model model;
+    protected View view;
 
 }
