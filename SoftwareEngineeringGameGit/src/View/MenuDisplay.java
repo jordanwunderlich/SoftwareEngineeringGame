@@ -5,12 +5,27 @@
  */
 package View;
 
+import Controller.Menu;
+
 /**
  *
  * @author Jan-Michael Angeles
  */
-public class MenuDisplay {
+public class MenuDisplay extends View {
+
+    public MenuDisplay(Menu menu) {
+        super(menu, null);
+        this.menu = menu;
+    }
+
+    private void displayButtons() {
+        for(int i = 0; i < menu.getButtons().length; i++){
+            
+        }
+    }
     
+    Menu menu;
+
     // creates visuals for the menu screens:
     // main menu
     // pause menu

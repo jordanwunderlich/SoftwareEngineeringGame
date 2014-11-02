@@ -13,22 +13,26 @@ import View.View;
  *
  * @author Jordan
  */
-public class RunGame {
+public abstract class State {
     
-    public static void main(String[] args) {
+    public State(){
         
     }
     
-    private void displaySplash(){
+    private void displayExitMenu(){
         throw new UnsupportedOperationException("Not supported yet.");
     }
     
-    private void displayMenu(){
+    private void exitGame(){
         throw new UnsupportedOperationException("Not supported yet.");
     }
     
-    Controller controller = new Controller();
-    Model model = new Model();
-    View view = new View();
+    public Controller getController() {
+        return controller;
+    }
     
+    Controller controller;
+    Model model;
+    View view;
+
 }

@@ -5,22 +5,23 @@
  */
 package Manager;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Jordan
  */
-public abstract class BaseState {
-
-    private void animationLoop() {
-
+public class Manager {
+    
+    public static void main(String[] args) {
+        //displaySplash();
+        state = new MenuState();
     }
     
-    private void displayExitMenu(){
+    private void displaySplash(){
         throw new UnsupportedOperationException("Not supported yet.");
     }
     
-    private void exitGame(){
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
+    private static State state;
+    
 }

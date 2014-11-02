@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Manager;
+package Controller;
+
+import java.awt.Button;
 
 /**
  *
  * @author Jordan
  */
-public class DefenseModeState extends BaseState{
+public abstract class Menu extends Controller{
+    
+    public abstract Button[] getButtons();
     
 }

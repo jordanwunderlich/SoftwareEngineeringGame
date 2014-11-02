@@ -5,11 +5,21 @@
  */
 package Manager;
 
+import Controller.MainMenu;
+import Controller.Menu;
+import View.MenuDisplay;
+
 /**
  *
  * @author Jordan
  */
-public class MainMenuState extends BaseState {
+public class MenuState extends State {
+    
+    public MenuState(){
+        menu = new MainMenu();
+        controller = menu;
+        view = new MenuDisplay(menu);
+    }
     
     private void displaylevelSelect(){
         throw new UnsupportedOperationException("Not supported yet.");
@@ -18,5 +28,7 @@ public class MainMenuState extends BaseState {
     private void load(){
         throw new UnsupportedOperationException("Not supported yet.");
     }
+    
+    Menu menu;
     
 }

@@ -11,14 +11,14 @@ package View;
  */
 public class TowerSprite {
         
-    public TowerSprite(Tower tower){
-        this.tower=tower;
-    }
-    
-    // display for different types of towers for recognition
-    // display for different projectile based on tower
-    
-    private Tower tower;
-    private Sprite sprite;
+//    public TowerSprite(Tower tower){
+//        this.tower=tower;
+//    }
+//    
+//    // display for different types of towers for recognition
+//    // display for different projectile based on tower
+//    
+//    private Tower tower;
+//    private Sprite sprite;
 }
 

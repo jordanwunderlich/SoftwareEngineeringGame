@@ -13,9 +13,9 @@ public class TutorialDisplay {
     // creates tutorial screen and pages
     // pulls sprite images as reference
     
-    public tutorial(Tutorial tutorial){
-        this.tutorial = tutorial;
-    }
-    
-    public Tutorial tutorial;
+//    public tutorial(Tutorial tutorial){
+//        this.tutorial = tutorial;
+//    }
+//    
+//    public Tutorial tutorial;
 }

@@ -6,11 +6,13 @@
 
 package Controller;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author Jason
  */
-public class Controller {
+public abstract class Controller implements ActionListener{
     
     public Controller(){
         

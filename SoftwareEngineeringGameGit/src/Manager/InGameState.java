@@ -9,6 +9,6 @@ package Manager;
  *
  * @author Jordan
  */
-public class LevelSelectState extends BaseState{
+public class InGameState {
     
 }
