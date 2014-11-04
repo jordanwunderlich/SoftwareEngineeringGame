@@ -11,6 +11,11 @@ package Model;
  */
 public class Grid {
     
+    public Grid(int row, int col){
+        this.row = row;
+        column = col;
+    }
+    
     int row;
     int column;
     

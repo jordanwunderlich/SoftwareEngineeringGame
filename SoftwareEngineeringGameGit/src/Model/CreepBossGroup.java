@@ -13,6 +13,7 @@ package Model;
 public class CreepBossGroup extends Creep{
     
       public CreepBossGroup(){
+          maxHealth = 60;
         health = 60;
         speed = 2;
         plunder = 20;

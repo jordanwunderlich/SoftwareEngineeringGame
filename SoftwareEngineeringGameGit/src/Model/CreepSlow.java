@@ -13,10 +13,11 @@ package Model;
 public class CreepSlow extends Creep {
     
      public CreepSlow(){
-        health = 5;
-        speed = 2;
-        plunder = 3;
-        scrap = 20;
+         maxHealth = 20;
+        health = 20;
+        speed = 1;
+        plunder = 8;
+        scrap = 60;
     }
     
 }

@@ -13,6 +13,7 @@ package Model;
 public class CreepSpeed extends Creep {
     
      public CreepSpeed(){
+          maxHealth = 10;
         health = 10;
         speed = 2;
         plunder = 3;

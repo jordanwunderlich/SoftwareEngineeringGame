@@ -12,6 +12,16 @@ import java.util.ArrayList;
  * @author Jordan
  */
 public class Level {
+    
+    public Level(){
+        map = new Map(this);
+    }
+    
+    public void add(Grid grid, int x, int y){
+        
+    }
+    
+    Map map;
     ArrayList<Creep> creeps;
     ArrayList<Wave> waves;
     int scrap;

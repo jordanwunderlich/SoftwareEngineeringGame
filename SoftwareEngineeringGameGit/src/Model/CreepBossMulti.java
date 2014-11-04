@@ -13,6 +13,7 @@ package Model;
 public class CreepBossMulti extends Creep {
     
      public CreepBossMulti(){
+         maxHealth = 100;
         health = 100;
         speed = 2;
         plunder = 50;

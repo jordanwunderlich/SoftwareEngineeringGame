@@ -13,6 +13,7 @@ package Model;
 public class CreepFly extends Creep {
     
      public CreepFly(){
+         maxHealth = 5;
         health = 5;
         speed = 2;
         plunder = 2;

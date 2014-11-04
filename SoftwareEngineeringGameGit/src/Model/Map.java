@@ -14,6 +14,16 @@ import java.util.ArrayList;
  */
 public class Map {
     
+    public Map(Level level) {
+        this.level = level;
+        for(int i = 0; i < rows; i++){
+            for(int q = 0; q < columns; q++){
+                grid[i][q] = new Grid(i, q);
+                level.add(grid[i][q], i*gridSize, q*gridSize);
+            }
+        }
+    }
+    
     private void displayMap(){
         throw new UnsupportedOperationException("Not supported yet.");
     }
@@ -23,6 +33,11 @@ public class Map {
     }
     
     Image mapimg;
+    int rows = 25;
+    int columns = 19;
+    Grid[][] grid = new Grid[rows][columns];
     ArrayList<GridPath> path;
+    int gridSize = 32;
+    Level level;
     
 }

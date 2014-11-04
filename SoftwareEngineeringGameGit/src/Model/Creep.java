@@ -26,6 +26,7 @@ public abstract class Creep{
         throw new UnsupportedOperationException("Not supported yet.");
     }
     
+    int maxHealth;
     int health;
     int speed;
     int scrap;
