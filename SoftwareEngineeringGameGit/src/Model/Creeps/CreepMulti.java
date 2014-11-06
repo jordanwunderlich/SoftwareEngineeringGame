@@ -4,19 +4,20 @@
  * and open the template in the editor.
  */
 
-package Model;
+package Model.Creeps;
 
 /**
  *
  * @author Jason
  */
-public class TowerLong extends Tower{
+public class CreepMulti extends Creep{
     
-    public TowerLong(){
-     damage = 7;
-     cost = 200;
-     rof = 1/2;
-     range = 5;
+     public CreepMulti(){
+         maxHealth = 15;
+        health = 15;
+        speed = 2;
+        plunder = 25;
+        scrap = 20;
     }
     
 }

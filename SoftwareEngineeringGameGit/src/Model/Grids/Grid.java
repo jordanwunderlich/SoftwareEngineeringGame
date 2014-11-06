@@ -3,12 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package Model.Grids;
 
 /**
  *
  * @author Jordan
  */
-public class PathCastle extends GridPath {
+public abstract class Grid {
+    
+    public Grid(int row, int col){
+        this.row = row;
+        column = col;
+    }
+    
+    int row;
+    int column;
     
 }

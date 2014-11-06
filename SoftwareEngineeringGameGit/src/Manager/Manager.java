@@ -5,8 +5,6 @@
  */
 package Manager;
 
-import javax.swing.JFrame;
-
 /**
  *
  * @author Jordan
@@ -20,6 +18,10 @@ public class Manager {
     
     private void displaySplash(){
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public static void setState(State state) {
+        Manager.state = state;
     }
     
     private static State state;

@@ -3,8 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package Model.Levels;
 
+import Model.Grids.Grid;
+import Model.Creeps.Creep;
+import Model.Map;
 import java.util.ArrayList;
 
 /**
@@ -21,12 +24,18 @@ public class Level {
         
     }
     
+    public void update(){
+        moveCreeps();
+    }
+    
+    private void moveCreeps(){
+        
+    }
+    
     Map map;
     ArrayList<Creep> creeps;
     ArrayList<Wave> waves;
     int scrap;
     int gold;
-    int number;
-    boolean available;
     
 }

@@ -3,12 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller;
+package Model.Grids;
 
 /**
  *
  * @author Jordan
  */
-public class DefenseMode {
+public class PathCastle extends GridPath {
+
+    public PathCastle(int row, int col) {
+        super(row, col);
+    }
     
 }

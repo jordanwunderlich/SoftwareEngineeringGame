@@ -4,20 +4,19 @@
  * and open the template in the editor.
  */
 
-package Model;
+package View;
+
+import Controller.Controller;
+import Model.Model;
 
 /**
  *
- * @author Jason
+ * @author Jordan
  */
-public class CreepFly extends Creep {
+public class InGameView extends View{
     
-     public CreepFly(){
-         maxHealth = 5;
-        health = 5;
-        speed = 2;
-        plunder = 2;
-        scrap = 30;
+    public InGameView(Controller controller, Model model){
+        super(controller, model);
     }
     
 }

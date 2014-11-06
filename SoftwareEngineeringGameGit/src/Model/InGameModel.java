@@ -8,16 +8,12 @@ package Model;
 
 /**
  *
- * @author Jason
+ * @author Jordan
  */
-public class CreepMulti extends Creep{
+public class InGameModel extends Model {
     
-     public CreepMulti(){
-         maxHealth = 15;
-        health = 15;
-        speed = 2;
-        plunder = 25;
-        scrap = 20;
+    public InGameModel(){
+        
     }
     
 }

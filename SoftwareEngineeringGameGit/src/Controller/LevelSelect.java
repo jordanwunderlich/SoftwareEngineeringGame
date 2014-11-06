@@ -5,8 +5,8 @@
  */
 package Controller;
 
-import Model.Level;
-import Model.Tower;
+import Model.Levels.Level;
+import Model.Towers.Tower;
 import java.util.ArrayList;
 
 /**

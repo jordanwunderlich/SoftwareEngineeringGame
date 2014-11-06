@@ -3,14 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package Model.Grids;
 
 /**
  *
  * @author Jordan
  */
-public class GridEmpty extends Grid {
-    
-    
+public class PathEntry extends GridPath {
+
+    public PathEntry(int row, int col) {
+        super(row, col);
+    }
     
 }

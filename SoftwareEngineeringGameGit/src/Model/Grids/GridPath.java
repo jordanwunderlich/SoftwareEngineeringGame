@@ -3,20 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
+package Model.Grids;
 
 /**
  *
  * @author Jordan
  */
-public class Grid {
-    
-    public Grid(int row, int col){
-        this.row = row;
-        column = col;
+public class GridPath extends Grid {
+
+    public GridPath(int row, int col) {
+        super(row, col);
     }
-    
-    int row;
-    int column;
     
 }

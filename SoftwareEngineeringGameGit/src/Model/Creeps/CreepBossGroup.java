@@ -4,20 +4,20 @@
  * and open the template in the editor.
  */
 
-package Model;
+package Model.Creeps;
 
 /**
  *
  * @author Jason
  */
-public class CreepBasic extends Creep{
+public class CreepBossGroup extends Creep{
     
-    public CreepBasic(){
-        maxHealth = 5;
-        health = 5;
+      public CreepBossGroup(){
+          maxHealth = 60;
+        health = 60;
         speed = 2;
-        plunder = 3;
-        scrap = 20;
+        plunder = 20;
+        scrap = 75;
     }
     
 }

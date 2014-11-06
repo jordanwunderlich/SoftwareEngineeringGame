@@ -3,20 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
 
-import Model.Creeps.Creep;
+package Model.Towers;
 
 /**
  *
- * @author Student
+ * @author Jason
  */
-public class CreepSprite {
+public class TowerBasic extends Tower {
     
-    public CreepSprite(Creep creep){
-        this.creep=creep;
+    public TowerBasic(){
+        
+     damage = 3;
+     cost = 100;
+     rof = 1;
+     range = 5;
+    
     }
-    
-    private Creep creep;
-    private Sprite sprite;
 }

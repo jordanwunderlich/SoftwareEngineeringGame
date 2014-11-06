@@ -5,6 +5,8 @@
  */
 package Controller;
 
+import Manager.InGameState;
+import Manager.Manager;
 import java.awt.Button;
 import java.awt.event.ActionEvent;
 
@@ -29,11 +31,11 @@ public class MainMenu extends Menu{
     }
     
     private void clickedTutorial(){
-        System.out.println("Tutorial was clicked.");
+        
     }
     
     private void clickedNewGame(){
-        
+        Manager.setState(new InGameState());
     }
     
     private void clickedLoadGame(){
@@ -45,7 +47,7 @@ public class MainMenu extends Menu{
     }
     
     private void clickedQuit(){
-        
+        System.exit(0);
     }
     
     @Override

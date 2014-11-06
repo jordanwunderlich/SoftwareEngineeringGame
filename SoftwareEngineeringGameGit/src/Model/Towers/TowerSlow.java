@@ -4,21 +4,21 @@
  * and open the template in the editor.
  */
 
-package Model;
+package Model.Towers;
 
 /**
  *
  * @author Jason
  */
-public class TowerAoE extends Tower {
+public class TowerSlow extends Tower {
     
-    public TowerAoE(){
+    public TowerSlow(){
         
-     damage = 4;
-     cost = 300;
-     rof = 2;
-     range = 7;
-     aoe = true;
+     damage = 1;
+     cost = 150;
+     rof = 1;
+     range = 5;
+     slows = true;
     }
     
 }

@@ -5,6 +5,10 @@
  */
 package Model;
 
+import Model.Levels.Level;
+import Model.Grids.Grid;
+import Model.Grids.GridEmpty;
+import Model.Grids.GridPath;
 import java.awt.Image;
 import java.util.ArrayList;
 
@@ -18,18 +22,10 @@ public class Map {
         this.level = level;
         for(int i = 0; i < rows; i++){
             for(int q = 0; q < columns; q++){
-                grid[i][q] = new Grid(i, q);
+                grid[i][q] = new GridEmpty(i, q);
                 level.add(grid[i][q], i*gridSize, q*gridSize);
             }
         }
-    }
-    
-    private void displayMap(){
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-    
-    private void displayGrid(){
-        throw new UnsupportedOperationException("Not supported yet.");
     }
     
     Image mapimg;

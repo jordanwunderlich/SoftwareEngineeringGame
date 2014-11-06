@@ -5,10 +5,20 @@
  */
 package Manager;
 
+import Controller.InGameController;
+import Model.InGameModel;
+import View.InGameView;
+
 /**
  *
  * @author Jordan
  */
-public class InGameState {
+public class InGameState extends State{
+    
+    public InGameState(){
+        controller = new InGameController();
+        model = new InGameModel();
+        view = new InGameView(controller, model);
+    }
     
 }

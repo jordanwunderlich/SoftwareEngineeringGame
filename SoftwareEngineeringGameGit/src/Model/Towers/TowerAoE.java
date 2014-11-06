@@ -4,20 +4,21 @@
  * and open the template in the editor.
  */
 
-package Model;
+package Model.Towers;
 
 /**
  *
  * @author Jason
  */
-public class CreepBossMulti extends Creep {
+public class TowerAoE extends Tower {
     
-     public CreepBossMulti(){
-         maxHealth = 100;
-        health = 100;
-        speed = 2;
-        plunder = 50;
-        scrap = 400;
+    public TowerAoE(){
+        
+     damage = 4;
+     cost = 300;
+     rof = 2;
+     range = 7;
+     aoe = true;
     }
     
 }
