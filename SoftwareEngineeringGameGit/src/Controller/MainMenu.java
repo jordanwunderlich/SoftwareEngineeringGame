@@ -8,24 +8,26 @@ package Controller;
 import Manager.InGameState;
 import Manager.Manager;
 import java.awt.Button;
-import java.awt.event.ActionEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Jordan
  */
-public class MainMenu extends Menu{
+public class MainMenu extends JPanel implements MouseListener{
     
     public MainMenu(){
         tutorial = new Button("Tutorial");
-        tutorial.addActionListener(this);
+        tutorial.addMouseListener(this);
         buttons = new Button[5];
         buttons[0] = tutorial;
     }
     
     @Override
-    public void actionPerformed(ActionEvent click){
-        if(click.getActionCommand().equals("tutorial")){
+    public void mouseClicked(MouseEvent click){
+        if(click.getSource() == tutorial){
             clickedTutorial();
         }
     }
@@ -49,13 +51,32 @@ public class MainMenu extends Menu{
     private void clickedQuit(){
         System.exit(0);
     }
-    
-    @Override
+     
     public Button[] getButtons(){
         return buttons;
     }
     
     private Button[] buttons;
     private Button tutorial;
+
+    @Override
+    public void mousePressed(MouseEvent me) {
+        
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent me) {
+        
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent me) {
+        
+    }
+
+    @Override
+    public void mouseExited(MouseEvent me) {
+        
+    }
     
 }

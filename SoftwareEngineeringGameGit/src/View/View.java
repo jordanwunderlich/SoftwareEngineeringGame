@@ -38,6 +38,7 @@ public class View {
         fullscreenFrame.add(new JLabel("Alliterative Aliens Are Always After All Our Aurum. Press ALT+F4 to exit fullscreen.", SwingConstants.CENTER), BorderLayout.CENTER);
         fullscreenFrame.validate();
         GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().setFullScreenWindow(fullscreenFrame);
+        
     }
     
     Controller controller;

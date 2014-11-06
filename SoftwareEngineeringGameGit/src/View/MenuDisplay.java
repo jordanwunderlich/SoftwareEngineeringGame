@@ -13,7 +13,7 @@ import Controller.Menu;
  */
 public class MenuDisplay extends View {
 
-    public MenuDisplay(Menu menu) throws Exception {
+    public MenuDisplay(Menu menu){
         super(menu, null);
         this.menu = menu;
     }

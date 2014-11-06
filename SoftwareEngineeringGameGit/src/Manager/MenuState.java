@@ -8,8 +8,6 @@ package Manager;
 import Controller.MainMenu;
 import Controller.Menu;
 import View.MenuDisplay;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -20,11 +18,7 @@ public class MenuState extends State {
     public MenuState(){
         menu = new MainMenu();
         controller = menu;
-        try {
-            view = new MenuDisplay(menu);
-        } catch (Exception ex) {
-            Logger.getLogger(MenuState.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        view = new MenuDisplay(menu);
     }
     
     private void displaylevelSelect(){
