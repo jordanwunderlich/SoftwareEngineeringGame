@@ -14,22 +14,23 @@ public abstract class Creep{
     /**
      * 
      */
-    private void displayHealth(){
-        throw new UnsupportedOperationException("Not supported yet.");
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getScrap() {
+        return scrap;
     }
     
-    private void addScrap(){
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-    
-    private void die(){
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-    
-    int maxHealth;
-    int health;
+    protected int maxHealth;
+    protected int health;
     int speed;
-    int scrap;
+    protected int scrap;
     int plunder;
     
 }

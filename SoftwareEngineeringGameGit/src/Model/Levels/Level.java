@@ -8,6 +8,7 @@ package Model.Levels;
 import Model.Grids.Grid;
 import Model.Creeps.Creep;
 import Model.Map;
+import Model.Projectile;
 import java.util.ArrayList;
 
 /**
@@ -32,10 +33,23 @@ public class Level {
         
     }
     
+    private void moveProjectiles(){
+        //move all the projectiles in the projectile array
+        //check to see if any projectiles are over creeps, if so, call damageCreep
+    }
+    
+    private void damageCreep(Creep creep, Projectile projectile){
+        creep.setHealth(creep.getHealth()-projectile.getDamage());
+        if(creep.getHealth()<0){
+            scrapPool = scrapPool + creep.getScrap();
+            creeps.remove(creep);
+        }
+    }
+    
     Map map;
     ArrayList<Creep> creeps;
     ArrayList<Wave> waves;
-    int scrap;
+    int scrapPool;
     int gold;
     
 }

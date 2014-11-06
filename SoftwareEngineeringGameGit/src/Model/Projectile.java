@@ -9,9 +9,13 @@ package Model;
  *
  * @author Jordan
  */
-public class Projectile {
+public abstract class Projectile {
     
     int damage;
     boolean aoe;
+
+    public int getDamage() {
+        return damage;
+    }
     
 }

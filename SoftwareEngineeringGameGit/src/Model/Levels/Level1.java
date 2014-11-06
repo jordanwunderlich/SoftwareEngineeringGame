@@ -15,7 +15,7 @@ import Model.Creeps.CreepBasic;
 public class Level1 extends Level{
     
     public Level1(){
-        scrap = 50;
+        scrapPool = 50;
         gold = 30;
         waves.add(new Wave());
         waves.get(0).addCreeps(new CreepBasic(), 10);

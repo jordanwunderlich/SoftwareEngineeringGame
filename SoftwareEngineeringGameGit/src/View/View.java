@@ -9,6 +9,8 @@ package View;
 import Controller.Controller;
 import Model.Model;
 import java.awt.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.*;
 /**
@@ -17,14 +19,18 @@ import javax.swing.*;
  */
 public class View {
     
-    public View(Controller controller, Model model) throws Exception{
+    public View(Controller controller, Model model){
         this.controller = controller;
         this.model = model;
         JFrame frame = new JFrame("Aliens");
         frame.setSize(800, 600);
         frame.setResizable(false);
         frame.setVisible(true);
-        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+        }
         final JFrame fullscreenFrame = new JFrame();
         fullscreenFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         fullscreenFrame.setUndecorated(true);
