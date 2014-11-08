@@ -5,11 +5,36 @@
  */
 package Controller;
 
+import java.awt.event.ActionListener;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
+
 /**
  *
  * @author acer
  */
-public class BuildTower {
+public class BuildTower extends JPopupMenu{
+    
+    private JMenuItem basicTower;
+    private JMenuItem longrangeTower;
+    private JMenuItem slowingTower;
+    private JMenuItem aoeTower;
+    
+    public BuildTower(ActionListener a){
+        basicTower = new JMenuItem("Basic Tower");
+        longrangeTower = new JMenuItem("Long Range Tower");
+        slowingTower = new JMenuItem("Slowing Tower");
+        aoeTower = new JMenuItem("Area of Effect Tower");
+        basicTower.addActionListener(a);
+        longrangeTower.addActionListener(a);
+        slowingTower.addActionListener(a);
+        aoeTower.addActionListener(a);
+        add(basicTower);
+        add(longrangeTower);
+        add(slowingTower);
+        add(aoeTower);
+    }
+    
     private void basicTower(){
         throw new UnsupportedOperationException("Not supported yet.");
     }

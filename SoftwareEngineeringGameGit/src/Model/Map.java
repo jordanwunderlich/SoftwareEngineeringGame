@@ -6,9 +6,6 @@
 package Model;
 
 import Model.Levels.Level;
-import Model.Grids.Grid;
-import Model.Grids.GridEmpty;
-import Model.Grids.GridPath;
 import java.awt.Image;
 import java.util.ArrayList;
 
@@ -31,7 +28,7 @@ public class Map {
     Image mapimg;
     int rows = 25;
     int columns = 19;
-    Grid[][] grid = new Grid[rows][columns];
+    GridSquare[][] grid = new GridSquare[rows][columns];
     ArrayList<GridPath> path;
     int gridSize = 32;
     Level level;

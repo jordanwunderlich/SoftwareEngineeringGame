@@ -21,14 +21,34 @@ public class MainMenu extends JPanel implements MouseListener{
     public MainMenu(){
         tutorial = new Button("Tutorial");
         tutorial.addMouseListener(this);
-        buttons = new Button[5];
-        buttons[0] = tutorial;
+        newGame = new Button("New Game");
+        newGame.addMouseListener(this);
+        loadGame = new Button("Load Game");
+        loadGame.addMouseListener(this);
+        options = new Button("Options");
+        options.addMouseListener(this);
+        quit = new Button("Quit");
+        quit.addMouseListener(this);
+        add(tutorial);
+        add(newGame);
+        add(loadGame);
+        add(options);
+        add(quit);
+        setVisible(true);
     }
     
     @Override
     public void mouseClicked(MouseEvent click){
         if(click.getSource() == tutorial){
             clickedTutorial();
+        }else if(click.getSource() == newGame){
+            clickedNewGame();
+        }else if(click.getSource() == loadGame){
+            clickedLoadGame();
+        }else if(click.getSource() == options){
+            clickedOptions();
+        }else if(click.getSource() == quit){
+            clickedQuit();
         }
     }
     
@@ -51,32 +71,24 @@ public class MainMenu extends JPanel implements MouseListener{
     private void clickedQuit(){
         System.exit(0);
     }
-     
-    public Button[] getButtons(){
-        return buttons;
-    }
     
-    private Button[] buttons;
+    @Override
+    public void mousePressed(MouseEvent me) {}
+
+    @Override
+    public void mouseReleased(MouseEvent me) {}
+
+    @Override
+    public void mouseEntered(MouseEvent me) {}
+
+    @Override
+    public void mouseExited(MouseEvent me) {}
+     
     private Button tutorial;
+    private Button newGame;
+    private Button loadGame;
+    private Button options;
+    private Button quit;
 
-    @Override
-    public void mousePressed(MouseEvent me) {
-        
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent me) {
-        
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent me) {
-        
-    }
-
-    @Override
-    public void mouseExited(MouseEvent me) {
-        
-    }
     
 }

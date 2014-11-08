@@ -11,14 +11,6 @@ package Model.Towers;
  */
 public abstract class Tower {
     
-    private void openTowerMenu(){
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-    
-    private void closeTowerMenu(){
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-    
     private void augmentStat(String stat){
         throw new UnsupportedOperationException("Not supported yet.");
     }

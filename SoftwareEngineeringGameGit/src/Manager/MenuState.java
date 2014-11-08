@@ -6,8 +6,7 @@
 package Manager;
 
 import Controller.MainMenu;
-import Controller.Menu;
-import View.MenuDisplay;
+import javax.swing.JFrame;
 
 /**
  *
@@ -15,10 +14,9 @@ import View.MenuDisplay;
  */
 public class MenuState extends State {
     
-    public MenuState(){
-        menu = new MainMenu();
-        controller = menu;
-        view = new MenuDisplay(menu);
+    public MenuState(JFrame frame){
+        this.frame = frame;
+        frame.getContentPane().add(new MainMenu());
     }
     
     private void displaylevelSelect(){
@@ -29,6 +27,6 @@ public class MenuState extends State {
         throw new UnsupportedOperationException("Not supported yet.");
     }
     
-    private Menu menu;
+    private JFrame frame;
     
 }

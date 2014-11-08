@@ -5,6 +5,9 @@
  */
 package Manager;
 
+import Controller.MainMenu;
+import javax.swing.JFrame;
+
 /**
  *
  * @author Jordan
@@ -13,7 +16,13 @@ public class Manager {
     
     public static void main(String[] args) {
         //displaySplash();
-        state = new MenuState();
+        frame = new JFrame("Aliens");
+        frame.setSize(800, 600);
+        frame.setResizable(false);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        state = new MenuState(frame);
+        frame.setVisible(true);
+        
     }
     
     private void displaySplash(){
@@ -25,5 +34,6 @@ public class Manager {
     }
     
     private static State state;
+    public static JFrame frame;
     
 }

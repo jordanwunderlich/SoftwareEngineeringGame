@@ -6,6 +6,9 @@
 
 package Model;
 
+import Model.Levels.Level;
+import Model.Levels.Level1;
+
 /**
  *
  * @author Jordan
@@ -13,7 +16,9 @@ package Model;
 public class InGameModel extends Model {
     
     public InGameModel(){
-        
+        level = new Level1();
     }
+    
+    Level level;
     
 }

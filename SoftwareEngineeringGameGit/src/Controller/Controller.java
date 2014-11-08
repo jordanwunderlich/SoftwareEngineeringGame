@@ -6,13 +6,13 @@
 
 package Controller;
 
-import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 
 /**
  *
  * @author Jason
  */
-public abstract class Controller implements ActionListener{
+public abstract class Controller implements MouseListener{
     
     public Controller(){
         

@@ -3,16 +3,19 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model.Grids;
+package View;
+
+import Model.GridSquare;
+import javax.swing.JPanel;
 
 /**
  *
  * @author Jordan
  */
-public class PathEntry extends GridPath {
-
-    public PathEntry(int row, int col) {
-        super(row, col);
+public class GridView extends JPanel{
+    
+    public GridView(GridSquare gridSquare){
+        
     }
     
 }

@@ -5,7 +5,7 @@
  */
 package Model.Levels;
 
-import Model.Grids.Grid;
+import Model.GridSquare;
 import Model.Creeps.Creep;
 import Model.Map;
 import Model.Projectile;
@@ -21,12 +21,13 @@ public class Level {
         map = new Map(this);
     }
     
-    public void add(Grid grid, int x, int y){
+    public void add(GridSquare grid, int x, int y){
         
     }
     
     public void update(){
         moveCreeps();
+        moveProjectiles();
     }
     
     private void moveCreeps(){
