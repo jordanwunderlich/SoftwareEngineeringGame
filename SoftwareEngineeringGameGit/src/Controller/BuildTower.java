@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
@@ -13,7 +14,7 @@ import javax.swing.JPopupMenu;
  *
  * @author acer
  */
-public class BuildTower extends JPopupMenu{
+public class BuildTower extends JPopupMenu implements ActionListener{
     
     private JMenuItem basicTower;
     private JMenuItem longrangeTower;
@@ -49,6 +50,13 @@ public class BuildTower extends JPopupMenu{
     
     private void aoeTower(){
         throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        if (ae == basicTower){
+            
+        }
     }
    
 }
