@@ -15,7 +15,7 @@ import java.awt.event.MouseListener;
  *
  * @author Jordan
  */
-public class GridController implements MouseListener, ActionListener {
+public class GridController implements MouseListener {
     
     GridSquare gridSquare;
     
@@ -43,10 +43,5 @@ public class GridController implements MouseListener, ActionListener {
 
     @Override
     public void mouseExited(MouseEvent e) {}
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
 }
