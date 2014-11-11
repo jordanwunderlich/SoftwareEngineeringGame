@@ -27,7 +27,7 @@ public class GridController implements MouseListener, ActionListener {
     public void mouseClicked(MouseEvent e) {
         if(gridSquare.getType() == GridSquare.Type.EMPTY
                 && gridSquare.getTower() == null){
-            BuildTower buildTower = new BuildTower();
+            BuildTower buildTower = new BuildTower((ActionListener)e);
             buildTower.show(e.getComponent(), e.getX(), e.getY());
         }
     }

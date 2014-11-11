@@ -19,7 +19,7 @@ public class Map {
         this.level = level;
         for(int i = 0; i < rows; i++){
             for(int q = 0; q < columns; q++){
-                grid[i][q] = new GridEmpty(i, q);
+                //grid[i][q] = new GridEmpty(i, q);
                 level.add(grid[i][q], i*gridSize, q*gridSize);
             }
         }
@@ -29,7 +29,7 @@ public class Map {
     int rows = 25;
     int columns = 19;
     GridSquare[][] grid = new GridSquare[rows][columns];
-    ArrayList<GridPath> path;
+    //ArrayList<GridPath> path;
     int gridSize = 32;
     Level level;
     
