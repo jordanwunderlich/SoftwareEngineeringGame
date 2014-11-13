@@ -5,6 +5,9 @@
  */
 package Manager;
 
+import View.View;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 
 /**
@@ -23,6 +26,18 @@ public class Manager {
         //state = new MenuState(frame);
         frame.setVisible(true);
         state = new InGameState();
+        JFrame f = new JFrame("Alliterative Aliends Are Always After Are Aurum");
+            
+        f.addWindowListener(new WindowAdapter(){
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    System.exit(0);
+                }
+            });
+
+        f.add(new View());
+        f.pack();
+        f.setVisible(true);
     }
     
     private void displaySplash(){

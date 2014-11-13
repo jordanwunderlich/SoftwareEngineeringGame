@@ -8,8 +8,12 @@ package View;
 
 import Controller.Controller;
 import Model.Model;
-import java.awt.Graphics;
-import javax.swing.JPanel;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import javax.imageio.*;
+import javax.swing.*;
 /**
  *
  * @author Jason
@@ -37,12 +41,45 @@ public class View extends JPanel {
 //        GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().setFullScreenWindow(fullscreenFrame);
     }
     
-    @Override
-    public void paint(Graphics g){
-        // To-do: Paint logic
-        // This might get big :/
+
+    BufferedImage img;
+
+    public void paint(Graphics g) {
+        g.drawImage(img, 0, 0, null);
     }
-    
+
+    public View() {
+       try {
+           img = ImageIO.read(new File("splash.jpg"));
+       } catch (IOException e) {
+       }
+
+    }
+
+    @Override
+    public Dimension getPreferredSize() {
+        if (img == null) {
+             return new Dimension(800,600);
+        } else {
+           return new Dimension(img.getWidth(null), img.getHeight(null));
+       }
+    }
+
+    public static void main(String[] args) {
+
+        JFrame f = new JFrame("Test");
+            
+        f.addWindowListener(new WindowAdapter(){
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    System.exit(0);
+                }
+            });
+
+        f.add(new View());
+        f.pack();
+        f.setVisible(true);
+    }
     Controller controller;
     Model model;
     
