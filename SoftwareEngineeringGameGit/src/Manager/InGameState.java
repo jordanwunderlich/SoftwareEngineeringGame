@@ -5,9 +5,9 @@
  */
 package Manager;
 
-import Controller.InGameController;
-import Model.InGameModel;
-import View.InGameView;
+import Controller.GridController;
+import Model.GridSquare;
+import View.GridView;
 
 /**
  *
@@ -16,11 +16,15 @@ import View.InGameView;
 public class InGameState extends State {
 
     public InGameState() {
-        //controller = new InGameController();
-        //model = new InGameModel();
         panel = new GamePanel();
         Manager.frame.add(panel);
-        //view = new InGameView(controller, model);
+        //Loopthingy
+        GridSquare square = new GridSquare();
+        GridView squareView = new GridView(square);
+        squareView.addMouseListener(new GridController(square, squareView));
+        //squareView.setLocation(i, i1);
+        panel.add(squareView);
+        //endloopthingy
     }
     
     GamePanel panel;

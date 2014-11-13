@@ -26,6 +26,10 @@ public class Manager {
         //state = new MenuState(frame);
         frame.setVisible(true);
         state = new InGameState();
+        
+    }
+    
+    private void displaySplash(){
         JFrame f = new JFrame("Alliterative Aliends Are Always After Are Aurum");
             
         f.addWindowListener(new WindowAdapter(){
@@ -38,10 +42,6 @@ public class Manager {
         f.add(new View());
         f.pack();
         f.setVisible(true);
-    }
-    
-    private void displaySplash(){
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     public static void setState(State state) {

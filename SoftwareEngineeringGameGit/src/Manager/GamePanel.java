@@ -5,21 +5,17 @@
  */
 package Manager;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
  *
  * @author Jordan
  */
-public class GamePanel extends JPanel implements Runnable, MouseListener, KeyListener{
+public class GamePanel extends JPanel implements Runnable, KeyListener{
 
     private static final int PWIDTH = 500; // size of panel
     private static final int PHEIGHT = 400;
@@ -30,12 +26,13 @@ public class GamePanel extends JPanel implements Runnable, MouseListener, KeyLis
     private volatile boolean gameOver = false; // for game termination
 
     public GamePanel() {
-        setBackground(Color.white); // white background
+        setBackground(Color.BLUE); // white background
         setSize(new Dimension(PWIDTH, PHEIGHT));
+        
+        this.setLayout(null);
 
         setFocusable(true);
         requestFocus();
-        addMouseListener(this);
         addKeyListener(this);
         
         setVisible(true);
@@ -92,31 +89,14 @@ public class GamePanel extends JPanel implements Runnable, MouseListener, KeyLis
 
     }
 
- // more methods, explained later...
+    @Override
+    public void keyTyped(KeyEvent e) {}
 
     @Override
-    public void mouseClicked(MouseEvent e) {}
-
-    @Override
-    public void mousePressed(MouseEvent e) {}
-
-    @Override
-    public void mouseReleased(MouseEvent e) {}
-
-    @Override
-    public void mouseEntered(MouseEvent e) {}
-
-    @Override
-    public void mouseExited(MouseEvent e) {}
-
-    @Override
-    public void keyTyped(KeyEvent e) {
+    public void keyPressed(KeyEvent e) {
         if(e.getKeyCode() == KeyEvent.VK_ESCAPE)
             System.exit(0);
     }
-
-    @Override
-    public void keyPressed(KeyEvent e) {}
 
     @Override
     public void keyReleased(KeyEvent e) {}
