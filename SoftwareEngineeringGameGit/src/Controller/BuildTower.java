@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Model.GridSquare;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JMenuItem;
@@ -20,16 +21,14 @@ public class BuildTower extends JPopupMenu implements ActionListener{
     private JMenuItem longrangeTower;
     private JMenuItem slowingTower;
     private JMenuItem aoeTower;
+    private GridSquare gridsquare;
     
-    public BuildTower(ActionListener a){
+    public BuildTower(GridSquare gridsquare){
+        this.gridsquare = gridsquare;
         basicTower = new JMenuItem("Basic Tower");
         longrangeTower = new JMenuItem("Long Range Tower");
         slowingTower = new JMenuItem("Slowing Tower");
         aoeTower = new JMenuItem("Area of Effect Tower");
-        basicTower.addActionListener(a);
-        longrangeTower.addActionListener(a);
-        slowingTower.addActionListener(a);
-        aoeTower.addActionListener(a);
         add(basicTower);
         add(longrangeTower);
         add(slowingTower);

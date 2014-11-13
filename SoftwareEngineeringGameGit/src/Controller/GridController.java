@@ -6,7 +6,7 @@
 package Controller;
 
 import Model.GridSquare;
-import java.awt.event.ActionEvent;
+import View.GridView;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -19,7 +19,7 @@ public class GridController implements MouseListener {
     
     GridSquare gridSquare;
     
-    public GridController(GridSquare gridSquare){
+    public GridController(GridSquare gridSquare, GridView gridView){
         this.gridSquare = gridSquare;
     }
 
@@ -27,7 +27,7 @@ public class GridController implements MouseListener {
     public void mouseClicked(MouseEvent e) {
         if(gridSquare.getType() == GridSquare.Type.EMPTY
                 && gridSquare.getTower() == null){
-            BuildTower buildTower = new BuildTower((ActionListener)e);
+            BuildTower buildTower = new BuildTower(gridSquare);
             buildTower.show(e.getComponent(), e.getX(), e.getY());
         }
         if(gridSquare.getType() == GridSquare.Type.EMPTY
