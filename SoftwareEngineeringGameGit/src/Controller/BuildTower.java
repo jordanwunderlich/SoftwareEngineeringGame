@@ -54,9 +54,9 @@ public class BuildTower extends JPopupMenu implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        if (ae == basicTower){
+        //if (ae == basicTower){
             
-        }
+        //}
     }
    
 }

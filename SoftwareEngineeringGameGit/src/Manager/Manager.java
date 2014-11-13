@@ -20,8 +20,9 @@ public class Manager {
         frame.setSize(800*SCALE, 600*SCALE);
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        state = new MenuState(frame);
+        //state = new MenuState(frame);
         frame.setVisible(true);
+        state = new InGameState();
     }
     
     private void displaySplash(){
