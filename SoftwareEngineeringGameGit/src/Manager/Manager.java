@@ -5,6 +5,7 @@
  */
 package Manager;
 
+import Controller.PauseMenu;
 import View.View;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -26,7 +27,6 @@ public class Manager {
         //state = new MenuState(frame);
         frame.setVisible(true);
         state = new InGameState();
-        
     }
     
     private void displaySplash(){

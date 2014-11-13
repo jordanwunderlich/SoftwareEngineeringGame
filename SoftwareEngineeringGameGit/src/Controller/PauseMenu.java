@@ -19,10 +19,13 @@ public class PauseMenu extends JPanel implements MouseListener {
     public PauseMenu() {
 
         resume = new Button("Resume");
+        resume.addMouseListener(this);
         restartRound = new Button("Restart Round");
+        restartRound.addMouseListener(this);
         returntoLevelSelect = new Button("Return to Level Select");
+        returntoLevelSelect.addMouseListener(this);
         quit = new Button("Quit");
-        addMouseListener(this);
+        quit.addMouseListener(this);
         add(resume);
         add(restartRound);
         add(returntoLevelSelect);
