@@ -17,15 +17,20 @@ public class InGameState extends State {
 
     public InGameState() {
         panel = new GamePanel();
+        for(int rows = 0; rows<20; rows++){
+            for(int cols = 0; cols<20; cols++){
+                GridSquare square = new GridSquare();
+                GridView squareView = new GridView(square);
+                squareView.setLocation(rows*32, cols*32);
+                squareView.addMouseListener(new GridController(square, squareView));             
+                panel.add(squareView);
+            }
+        }
+        panel.repaint();
         Manager.frame.add(panel);
-        //Loopthingy
-        GridSquare square = new GridSquare();
-        GridView squareView = new GridView(square);
-        squareView.addMouseListener(new GridController(square, squareView));
-        //squareView.setLocation(i, i1);
-        panel.add(squareView);
-        //endloopthingy
+        Manager.frame.repaint();
     }
+    
     
     GamePanel panel;
 

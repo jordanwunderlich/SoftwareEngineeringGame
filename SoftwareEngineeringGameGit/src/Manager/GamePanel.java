@@ -26,10 +26,10 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
     private volatile boolean gameOver = false; // for game termination
 
     public GamePanel() {
-        setBackground(Color.BLUE); // white background
+        setBackground(Color.WHITE); // white background
         setSize(new Dimension(PWIDTH, PHEIGHT));
         
-        this.setLayout(null);
+        setLayout(null);
 
         setFocusable(true);
         requestFocus();

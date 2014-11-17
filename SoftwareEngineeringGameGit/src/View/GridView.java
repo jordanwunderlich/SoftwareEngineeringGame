@@ -6,16 +6,34 @@
 package View;
 
 import Model.GridSquare;
-import javax.swing.JPanel;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+import javax.swing.JComponent;
 
 /**
  *
  * @author Jordan
  */
-public class GridView extends JPanel{
-    
-    public GridView(GridSquare gridSquare){
-        
+public class GridView extends JComponent {
+
+    public GridView(GridSquare gridSquare) {
+        setSize(new Dimension(32, 32));
+        try {
+            img = ImageIO.read(new File("EmptyGridSquare.png"));
+        } catch (IOException e) {
+        }
     }
     
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.drawImage(img, 0, 0, null);
+    }
+
+    BufferedImage img;
+
 }
