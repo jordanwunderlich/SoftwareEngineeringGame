@@ -20,7 +20,7 @@ public class Map {
         for(int i = 0; i < rows; i++){
             for(int q = 0; q < columns; q++){
                 //grid[i][q] = new GridEmpty(i, q);
-                level.add(grid[i][q], i*gridSize, q*gridSize);
+                //level.add(grid[i][q], i*gridSize, q*gridSize);
             }
         }
     }

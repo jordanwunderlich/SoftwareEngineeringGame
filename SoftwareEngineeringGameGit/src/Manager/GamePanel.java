@@ -17,8 +17,8 @@ import javax.swing.JPanel;
  */
 public class GamePanel extends JPanel implements Runnable, KeyListener{
 
-    private static final int PWIDTH = 500; // size of panel
-    private static final int PHEIGHT = 400;
+    private static final int PWIDTH = 800; // size of panel
+    private static final int PHEIGHT = 600;
 
     private Thread animator; // for the animation
     private volatile boolean running = false; // stops the animation

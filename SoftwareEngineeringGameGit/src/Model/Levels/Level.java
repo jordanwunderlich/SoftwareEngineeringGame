@@ -10,6 +10,7 @@ import Model.Creeps.Creep;
 import Model.Map;
 import Model.Projectile;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  *
@@ -18,11 +19,11 @@ import java.util.ArrayList;
 public class Level {
     
     public Level(){
-        map = new Map(this);
-    }
-    
-    public void add(GridSquare grid, int x, int y){
-        
+        for(int rows = 0; rows<25; rows++){
+            for(int cols = 0; cols<18; cols++){
+                grid[rows][cols] = new GridSquare();
+            }
+        }
     }
     
     public void update(){
@@ -46,11 +47,47 @@ public class Level {
             creeps.remove(creep);
         }
     }
+
+    public ArrayList<Creep> getCreeps() {
+        return creeps;
+    }
+
+    public int getScrapPool() {
+        return scrapPool;
+    }
+
+    public int getGold() {
+        return gold;
+    }
+
+    public GridSquare[][] getGrid() {
+        return grid;
+    }
+
+    public ArrayList<Wave> getWaves() {
+        return waves;
+    }
+
+    public LinkedList<GridCoordinates> getPath() {
+        return path;
+    }
+
+    public GridCoordinates getCastle() {
+        return castle;
+    }
+
+    public GridCoordinates getStartPath() {
+        return startPath;
+    }
     
-    Map map;
-    ArrayList<Creep> creeps;
-    ArrayList<Wave> waves;
-    int scrapPool;
-    int gold;
+    protected ArrayList<Creep> creeps;
+    protected int scrapPool;
+    protected int gold;
+    protected GridSquare[][] grid = new GridSquare[25][18];
+    
+    protected ArrayList<Wave> waves = new ArrayList();
+    protected LinkedList<GridCoordinates> path = new LinkedList();
+    protected GridCoordinates castle;
+    protected GridCoordinates startPath;
     
 }

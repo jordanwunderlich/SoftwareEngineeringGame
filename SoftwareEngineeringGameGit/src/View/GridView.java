@@ -22,9 +22,17 @@ public class GridView extends JComponent {
 
     public GridView(GridSquare gridSquare) {
         setSize(new Dimension(32, 32));
+        if(gridSquare.getType() == GridSquare.Type.EMPTY){
         try {
             img = ImageIO.read(new File("EmptyGridSquare.png"));
         } catch (IOException e) {
+        }
+        }
+        if(gridSquare.getType() == GridSquare.Type.PATH){
+        try {
+            img = ImageIO.read(new File("PathGridSquare.png"));
+        } catch (IOException e) {
+        }
         }
     }
     
