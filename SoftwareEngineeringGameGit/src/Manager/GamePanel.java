@@ -45,7 +45,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
         }
     }
 
-    private void startGame() // initialise and start the thread
+    private void startGame() // initialize and start the thread
     {
         if (animator == null || !running) {
             animator = new Thread(this);
