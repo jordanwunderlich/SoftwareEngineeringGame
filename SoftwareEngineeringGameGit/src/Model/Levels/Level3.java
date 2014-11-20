@@ -70,8 +70,36 @@ public class Level3 extends Level {
         path.add(new GridCoordinates(16, 7));
         path.add(new GridCoordinates(16, 8));
         path.add(new GridCoordinates(16, 9));
-        path.add(new GridCoordinates(16, 6));
-        castle = new GridCoordinates(2, 2);
+        path.add(new GridCoordinates(16, 10));
+        path.add(new GridCoordinates(15, 10));
+        path.add(new GridCoordinates(14, 10));
+        path.add(new GridCoordinates(13, 10));
+        path.add(new GridCoordinates(12, 10));
+        path.add(new GridCoordinates(11, 10));
+        path.add(new GridCoordinates(10, 10));
+        path.add(new GridCoordinates(9, 10));
+        path.add(new GridCoordinates(8, 10));
+        path.add(new GridCoordinates(7, 10));
+        path.add(new GridCoordinates(6, 10));
+        path.add(new GridCoordinates(5, 10));
+        path.add(new GridCoordinates(4, 10));
+        path.add(new GridCoordinates(4, 9));
+        path.add(new GridCoordinates(3, 9));
+        path.add(new GridCoordinates(3, 8));
+        path.add(new GridCoordinates(3, 7));
+        path.add(new GridCoordinates(4, 7));
+        path.add(new GridCoordinates(4, 8));
+        path.add(new GridCoordinates(5, 8));
+        path.add(new GridCoordinates(6, 8));
+        path.add(new GridCoordinates(7, 8));
+        path.add(new GridCoordinates(8, 8));
+        path.add(new GridCoordinates(9, 8));
+        path.add(new GridCoordinates(10, 8));
+        path.add(new GridCoordinates(11, 8));
+        path.add(new GridCoordinates(12, 8));
+        path.add(new GridCoordinates(12, 7));
+        path.add(new GridCoordinates(12, 6));
+        castle = new GridCoordinates(10, 2);
         for(int a = 0; a < path.size(); a++){
             grid[path.get(a).getX()][path.get(a).getY()].setType(GridSquare.Type.PATH);
         }
