@@ -15,5 +15,6 @@ public class Profile {
     private void clickedProfile() {
         
     }
-    
+    //load and save to a text document
+    //use layout manager
 }

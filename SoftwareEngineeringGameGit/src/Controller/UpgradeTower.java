@@ -5,24 +5,85 @@
  */
 package Controller;
 
+import java.awt.Button;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import javax.swing.JPanel;
+
 /**
  *
  * @author acer
  */
-public class UpgradeTower {
-    private void sellTower(){
-        throw new UnsupportedOperationException("Not supported yet.");
+public class UpgradeTower extends JPanel implements MouseListener {
+
+public UpgradeTower () {
+    
+        sellTower = new Button("Sell Tower");
+        sellTower.addMouseListener(this);
+        upgradeRange = new Button("Upgrade Range");
+        upgradeRange.addMouseListener(this);
+        upgradeSpeed = new Button("Upgrade Speed");
+        upgradeSpeed.addMouseListener(this);
+        upgradeDamage = new Button("Upgrade Damage");
+        upgradeDamage.addMouseListener(this);
+        add(sellTower);
+        add(upgradeRange);
+        add(upgradeSpeed);
+        add(upgradeDamage);
+        setVisible(true);
+    }
+
+@Override
+    public void mouseClicked(MouseEvent click) {
+        if (click.getSource() == sellTower) {
+            clickedSellTower();
+        } else if (click.getSource() == upgradeRange) {
+            clickedUpgradeRange();
+        } else if (click.getSource() == upgradeSpeed) {
+            clickedUpgradeSpeed();
+        } else if (click.getSource() == upgradeDamage) {
+            clickedUpgradeDamage();
+        }
+    }
+
+     private void clickedSellTower(){
+        
     }
     
-    private void upgradeRange(){
-        throw new UnsupportedOperationException("Not supported yet.");
+    private void clickedUpgradeRange(){
+       
     }
     
-    private void upgradeSpeed(){
-        throw new UnsupportedOperationException("Not supported yet.");
+    private void clickedUpgradeSpeed(){
+       
     }
     
-    private void upgradeDamage(){
-        throw new UnsupportedOperationException("Not supported yet.");
+    private void clickedUpgradeDamage(){
+        
     }
+    
+    @Override
+    public void mousePressed(MouseEvent me) {
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent me) {
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent me) {
+    }
+
+    @Override
+    public void mouseExited(MouseEvent me) {
+    }
+
+    private Button sellTower;
+    private Button upgradeRange;
+    private Button upgradeSpeed;
+    private Button upgradeDamage;
+
 }
+
+   
+
