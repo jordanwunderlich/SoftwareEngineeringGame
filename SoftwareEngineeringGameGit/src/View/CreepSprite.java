@@ -6,17 +6,41 @@
 package View;
 
 import Model.Creeps.Creep;
+import Model.Creeps.CreepBasic;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.JComponent;
 
 /**
  *
  * @author Student
  */
-public class CreepSprite {
+public class CreepSprite extends JComponent{
     
     public CreepSprite(Creep creep){
         this.creep=creep;
+        setSize(new Dimension(32, 32));
+        if(creep instanceof CreepBasic){
+            try {
+                sprite = ImageIO.read(new File("basiccreepv1.png"));
+            } catch (IOException ex) {
+                Logger.getLogger(CreepSprite.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    
+    @Override
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.drawImage(sprite, 0, 0, null);
     }
     
     private Creep creep;
-    private Sprite sprite;
+    private BufferedImage sprite;
 }
