@@ -5,6 +5,7 @@
  */
 package Manager;
 
+import Model.Levels.Level;
 import View.GridView;
 import java.awt.Color;
 import java.awt.Component;
@@ -13,7 +14,6 @@ import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
-import javax.swing.JComponent;
 import javax.swing.JPanel;
 
 /**
@@ -32,8 +32,11 @@ public class GamePanel extends JPanel implements KeyListener {
 
     public ArrayList<GridView> map;
     public ArrayList<Component> things;
+    private Level level;
 
-    public GamePanel() {
+    public GamePanel(Level level) {
+        this.level = level;
+        
         setBackground(Color.WHITE); // white background
         setSize(new Dimension(PWIDTH, PHEIGHT));
 
@@ -49,20 +52,6 @@ public class GamePanel extends JPanel implements KeyListener {
         things = new ArrayList<>();
         
         
-    }
-
-    private void testPress(int x, int y) {
-        if (!gameOver) {
-
-        }
-    }
-
-    private void startGame() // initialize and start the thread
-    {
-        if (animator == null || !running) {
-            //animator = new Thread(this);
-            animator.start();
-        }
     }
 
     public void stopGame() // called by the user to stop execution
@@ -103,7 +92,7 @@ public class GamePanel extends JPanel implements KeyListener {
     } // end of run( )
 
     private void gameUpdate() {
-        
+        level.update();
     }
 
     private void gameRender() {

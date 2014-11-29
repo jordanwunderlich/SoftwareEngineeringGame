@@ -24,12 +24,14 @@ public class Level {
                 grid[rows][cols] = new GridSquare();
             }
         }
+        currentWave = 0;
+        currentCreep = 0;
     }
     
     public void update(){
         numUpdated++;
         if(numUpdated/120 == Math.round(numUpdated/120)){
-            
+            creeps.add(waves.get(currentWave).getCreep(currentCreep));
         }
     }
     
@@ -87,6 +89,8 @@ public class Level {
     protected int gold;
     protected GridSquare[][] grid = new GridSquare[25][18];
     private int numUpdated = 0;
+    private int currentWave;
+    private int currentCreep;
     
     protected ArrayList<Wave> waves = new ArrayList<>();
     protected LinkedList<GridCoordinates> path = new LinkedList<>();

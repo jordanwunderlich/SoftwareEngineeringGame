@@ -24,6 +24,10 @@ public class Wave {
         }
     }
     
+    public Creep getCreep(int i){
+        return creepList.get(i);
+    }
+    
     private ArrayList<Creep> creepList = new ArrayList<>();
     int spawnRate;
     

@@ -22,6 +22,8 @@ import javax.swing.JComponent;
 public class GridView extends JComponent {
 
     public GridView(GridSquare gridSquare) {
+        this.gridsquare = gridSquare;
+        
         setSize(new Dimension(32, 32));
         if (gridSquare.getType() == GridSquare.Type.EMPTY) {
             if(gridSquare.getTower() instanceof TowerBasic){
@@ -42,13 +44,30 @@ public class GridView extends JComponent {
             }
         }
     }
+    
+    public int getX(){
+        return gridsquare.xloc;
+    }
+    
+    public int getY(){
+        return gridsquare.yloc;
+    }
+    
+    public void setX(int x){
+        gridsquare.xloc = x;
+    }
+    
+    public void setY(int y){
+        gridsquare.yloc = y;
+    }
 
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(img, 0, 0, null);
+        g.drawImage(img, gridsquare.xloc, gridsquare.yloc, null);
     }
-
+    
+    GridSquare gridsquare;
     BufferedImage img;
 
 }

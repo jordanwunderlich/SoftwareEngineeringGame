@@ -39,5 +39,7 @@ public class GridSquare {
     
     private Type type;
     private Tower tower;
+    public int xloc;
+    public int yloc;
     
 }
