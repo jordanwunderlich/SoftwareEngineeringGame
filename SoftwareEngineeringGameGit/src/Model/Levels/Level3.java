@@ -103,4 +103,5 @@ public class Level3 extends Level {
         for(int a = 0; a < path.size(); a++){
             grid[path.get(a).getX()][path.get(a).getY()].setType(GridSquare.Type.PATH);
         }
+    }
 }
