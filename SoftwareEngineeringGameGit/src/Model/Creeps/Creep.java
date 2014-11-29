@@ -32,5 +32,7 @@ public abstract class Creep{
     int speed;
     protected int scrap;
     int plunder;
+    public int yloc;
+    public int xloc;
     
 }

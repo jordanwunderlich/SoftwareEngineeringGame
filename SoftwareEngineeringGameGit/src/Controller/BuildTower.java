@@ -6,6 +6,10 @@
 package Controller;
 
 import Model.GridSquare;
+import Model.Towers.TowerAoE;
+import Model.Towers.TowerBasic;
+import Model.Towers.TowerLong;
+import Model.Towers.TowerSlow;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JMenuItem;
@@ -40,18 +44,22 @@ public class BuildTower extends JPopupMenu implements ActionListener{
     }
     
     private void basicTower(){
+        gridsquare.setTower(new TowerBasic());
         System.out.println("Basic Tower clicked");
     }
     
     private void longrangeTower(){
+        gridsquare.setTower(new TowerLong());
         System.out.println("Long Range Tower clicked");
     }
     
     private void slowingTower(){
+        gridsquare.setTower(new TowerSlow());
         System.out.println("Slowing Tower clicked");
     }
     
     private void aoeTower(){
+        gridsquare.setTower(new TowerAoE());
         System.out.println("AOE Tower clicked");
     }
 

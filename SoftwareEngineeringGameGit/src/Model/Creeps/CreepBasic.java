@@ -18,6 +18,8 @@ public class CreepBasic extends Creep{
         speed = 2;
         plunder = 3;
         scrap = 20;
+        xloc = 64;
+        yloc = 64;
     }
     
 }

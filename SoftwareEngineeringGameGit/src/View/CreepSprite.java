@@ -28,7 +28,7 @@ public class CreepSprite extends JComponent{
         setSize(new Dimension(32, 32));
         if(creep instanceof CreepBasic){
             try {
-                sprite = ImageIO.read(new File("basiccreepv1.png"));
+                sprite = ImageIO.read(new File("basiccreep-v1.png"));
             } catch (IOException ex) {
                 Logger.getLogger(CreepSprite.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -38,7 +38,7 @@ public class CreepSprite extends JComponent{
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(sprite, 0, 0, null);
+        g.drawImage(sprite, creep.xloc, creep.yloc, null);
     }
     
     private Creep creep;

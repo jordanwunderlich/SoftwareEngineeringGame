@@ -47,6 +47,8 @@ public class GamePanel extends JPanel implements KeyListener {
 
         map = new ArrayList<>();
         things = new ArrayList<>();
+        
+        
     }
 
     private void testPress(int x, int y) {
@@ -80,13 +82,14 @@ public class GamePanel extends JPanel implements KeyListener {
 
             gameUpdate(); // game state is updated
             gameRender(); // render to a buffer
-            repaint(); // paint with the buffer
 
             time = System.currentTimeMillis() - time;
             time = 17 - time;
             try {
+                System.out.println("Sleep for: " + time);
                 Thread.sleep(time); // sleep a bit
             } catch (InterruptedException ex) {
+                System.out.println("Timeout value is negative.");
             }
 
             if (System.currentTimeMillis() - millis >= 1000) {
@@ -95,19 +98,16 @@ public class GamePanel extends JPanel implements KeyListener {
             }
         }
 
-        System.exit(0);
+        //System.exit(0);
 
     } // end of run( )
 
     private void gameUpdate() {
-        if (!gameOver) // update game state ...
-        {
-
-        }
+        
     }
 
     private void gameRender() {
-        paint(this.getGraphics());
+        repaint();
     }
 
     @Override
@@ -125,21 +125,20 @@ public class GamePanel extends JPanel implements KeyListener {
     public void keyReleased(KeyEvent e) {
     }
     
-//    public GridView add(GridView g){
-//        super.add(g);
-//        map.add(g);
-//        return g;
-//    }
-//    
-//    @Override
-//    public Component add(Component j){
-//        super.add(j);
-//        things.add(j);
-//        return j;
-//    }
+    @Override
+    public Component add(Component j){
+        super.add(j);
+        if(j instanceof GridView){
+            map.add((GridView)j);
+        } else{
+            things.add(j);
+        }
+        return j;
+    }
 
     @Override
     public void paint(Graphics g) {
+        System.out.println("Painting.");
         super.paint(g);
         if (map != null) {
             for (int i = 0; i < map.size(); i++) {
@@ -148,8 +147,6 @@ public class GamePanel extends JPanel implements KeyListener {
         }
         if (things != null) {
             for (int i = 0; i < things.size(); i++) {
-                System.out.println(things.get(i).getLocation());
-                things.get(i).setLocation(32, 32);
                 things.get(i).paint(g);
             }
         }

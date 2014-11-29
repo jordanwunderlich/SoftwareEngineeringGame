@@ -27,11 +27,11 @@ public class Manager {
         frame.setResizable(false);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //state = new MenuState(frame);
+        frame.setVisible(true);
         state = new InGameState();
 //        GridView temp = new GridView(new GridSquare());
 //        temp.setLocation(50,50);
 //        frame.add(temp);
-        frame.setVisible(true);
     }
 
     private void displaySplash() {
