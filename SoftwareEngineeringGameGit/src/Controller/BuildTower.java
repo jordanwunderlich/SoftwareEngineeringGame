@@ -29,6 +29,10 @@ public class BuildTower extends JPopupMenu implements ActionListener{
         longrangeTower = new JMenuItem("Long Range Tower");
         slowingTower = new JMenuItem("Slowing Tower");
         aoeTower = new JMenuItem("Area of Effect Tower");
+        basicTower.addActionListener(this);
+        longrangeTower.addActionListener(this);
+        slowingTower.addActionListener(this);
+        aoeTower.addActionListener(this);
         add(basicTower);
         add(longrangeTower);
         add(slowingTower);
@@ -36,26 +40,32 @@ public class BuildTower extends JPopupMenu implements ActionListener{
     }
     
     private void basicTower(){
-        throw new UnsupportedOperationException("Not supported yet.");
+        System.out.println("Basic Tower clicked");
     }
     
     private void longrangeTower(){
-        throw new UnsupportedOperationException("Not supported yet.");
+        System.out.println("Long Range Tower clicked");
     }
     
     private void slowingTower(){
-        throw new UnsupportedOperationException("Not supported yet.");
+        System.out.println("Slowing Tower clicked");
     }
     
     private void aoeTower(){
-        throw new UnsupportedOperationException("Not supported yet.");
+        System.out.println("AOE Tower clicked");
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
-        //if (ae == basicTower){
-            
-        //}
+        if (ae.getSource() == basicTower){
+            basicTower();
+        } else if (ae.getSource() == longrangeTower){
+            longrangeTower();
+        } else if (ae.getSource() == slowingTower){
+            slowingTower();
+        } else if (ae.getSource() == aoeTower){
+            aoeTower();
+        }
     }
    
 }
