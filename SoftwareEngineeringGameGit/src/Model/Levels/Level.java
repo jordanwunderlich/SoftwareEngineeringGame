@@ -27,8 +27,10 @@ public class Level {
     }
     
     public void update(){
-        moveCreeps();
-        moveProjectiles();
+        numUpdated++;
+        if(numUpdated/120 == Math.round(numUpdated/120)){
+            
+        }
     }
     
     private void moveCreeps(){
@@ -84,9 +86,10 @@ public class Level {
     protected int scrapPool;
     protected int gold;
     protected GridSquare[][] grid = new GridSquare[25][18];
+    private int numUpdated = 0;
     
-    protected ArrayList<Wave> waves = new ArrayList();
-    protected LinkedList<GridCoordinates> path = new LinkedList();
+    protected ArrayList<Wave> waves = new ArrayList<>();
+    protected LinkedList<GridCoordinates> path = new LinkedList<>();
     protected GridCoordinates castle;
     protected GridCoordinates startPath;
     

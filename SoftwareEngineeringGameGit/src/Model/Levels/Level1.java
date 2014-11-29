@@ -19,12 +19,12 @@ public class Level1 extends Level{
         super();
         scrapPool = 50;
         gold = 30;
-//        waves.add(new Wave());
-//        waves.get(0).addCreeps(new CreepBasic(), 10);
-//        waves.add(new Wave());
-//        waves.get(1).addCreeps(new CreepBasic(), 10);
-//        waves.add(new Wave());
-//        waves.get(2).addCreeps(new CreepBasic(), 10);
+        waves.add(new Wave());
+        waves.get(0).addCreeps(new CreepBasic(), 10);
+        waves.add(new Wave());
+        waves.get(1).addCreeps(new CreepBasic(), 10);
+        waves.add(new Wave());
+        waves.get(2).addCreeps(new CreepBasic(), 10);
         
         
         startPath = new GridCoordinates(5, 16);

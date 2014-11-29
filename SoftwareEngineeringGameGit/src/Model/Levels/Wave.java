@@ -24,7 +24,7 @@ public class Wave {
         }
     }
     
-    private ArrayList<Creep> creepList;
+    private ArrayList<Creep> creepList = new ArrayList<>();
     int spawnRate;
     
 }
