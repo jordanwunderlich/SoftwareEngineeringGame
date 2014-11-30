@@ -6,38 +6,21 @@
 
 package View;
 
-import Controller.InGameController;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import Model.Levels.Level;
 import javax.swing.JPanel;
 
 /**
  *
  * @author Jordan
  */
-public class InGameView extends JPanel implements MouseListener{
+public class InGameView extends JPanel {
     
-    public InGameView(InGameController controller){
-        this.controller = controller;
+    public InGameView(Level level){
+        this.level = level;
     }
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {}
-
-    @Override
-    public void mouseReleased(MouseEvent e) {}
-
-    @Override
-    public void mouseEntered(MouseEvent e) {}
-
-    @Override
-    public void mouseExited(MouseEvent e) {}
     
-    private InGameController controller;
+    
+    
+    private Level level;
     
 }
