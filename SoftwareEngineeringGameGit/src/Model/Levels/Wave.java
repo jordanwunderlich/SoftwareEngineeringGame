@@ -6,6 +6,7 @@
 package Model.Levels;
 
 import Model.Creeps.Creep;
+import Model.Creeps.CreepBasic;
 import java.util.ArrayList;
 
 /**
@@ -18,14 +19,20 @@ public class Wave {
         
     }
     
-    public void addCreeps(Creep creep, int number){
+    public void addCreeps(String string, int number){
         for(int i = 0; i < number; i++){
-            creepList.add(creep);
+            if(string.equals("basic")){
+                creepList.add(new CreepBasic());
+            }
         }
     }
     
     public Creep getCreep(int i){
         return creepList.get(i);
+    }
+    
+    public int getSize(){
+        return creepList.size();
     }
     
     private ArrayList<Creep> creepList = new ArrayList<>();

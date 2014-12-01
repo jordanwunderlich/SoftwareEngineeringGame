@@ -20,6 +20,7 @@ public class CreepBasic extends Creep{
         scrap = 20;
         xloc = 0;
         yloc = 0;
+        hasSprite = false;
     }
     
 }

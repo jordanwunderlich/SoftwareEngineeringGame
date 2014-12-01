@@ -6,11 +6,10 @@
 package Manager;
 
 import Controller.GridController;
-import Model.Creeps.CreepBasic;
 import Model.Levels.Level;
 import Model.Levels.Level1;
-import View.CreepSprite;
 import View.GridView;
+import View.InGameView;
 
 /**
  *
@@ -20,7 +19,8 @@ public class InGameState extends State {
 
     public InGameState() {
         level = new Level1();
-        panel = new GamePanel(level);
+        view = new InGameView(level);
+        panel = new GamePanel(level, view);
         Manager.frame.add(panel);
         for(int rows = 0; rows<25; rows++){
             for(int cols = 0; cols<18; cols++){
@@ -35,11 +35,14 @@ public class InGameState extends State {
                 //panel.map.add(squareView);
             }
         }
+        panel.repaint();
         panel.animate();
+        //panel.repaint();
     }
     
     
     GamePanel panel;
     Level level;
+    InGameView view;
 
 }

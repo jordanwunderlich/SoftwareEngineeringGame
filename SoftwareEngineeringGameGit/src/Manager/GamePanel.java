@@ -7,6 +7,7 @@ package Manager;
 
 import Model.Levels.Level;
 import View.GridView;
+import View.InGameView;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -33,9 +34,11 @@ public class GamePanel extends JPanel implements KeyListener {
     public ArrayList<GridView> map;
     public ArrayList<Component> things;
     private Level level;
+    private InGameView view;
 
-    public GamePanel(Level level) {
+    public GamePanel(Level level, InGameView view) {
         this.level = level;
+        this.view = view;
         
         setBackground(Color.WHITE); // white background
         setSize(new Dimension(PWIDTH, PHEIGHT));
@@ -75,7 +78,7 @@ public class GamePanel extends JPanel implements KeyListener {
             time = System.currentTimeMillis() - time;
             time = 17 - time;
             try {
-                System.out.println("Sleep for: " + time);
+                //System.out.println("Sleep for: " + time);
                 Thread.sleep(time); // sleep a bit
             } catch (InterruptedException ex) {
                 System.out.println("Timeout value is negative.");
@@ -127,17 +130,21 @@ public class GamePanel extends JPanel implements KeyListener {
 
     @Override
     public void paint(Graphics g) {
-        System.out.println("Painting.");
+        //System.out.println("Painting.");
         super.paint(g);
         if (map != null) {
             for (int i = 0; i < map.size(); i++) {
                 map.get(i).paint(g);
             }
         }
-        if (things != null) {
-            for (int i = 0; i < things.size(); i++) {
-                things.get(i).paint(g);
-            }
+//        if (things != null) {
+//            for (int i = 0; i < things.size(); i++) {
+//                things.get(i).paint(g);
+//            }
+//        }
+        for(int i = 0; i < view.getActiveCreeps().size(); i++){
+            System.out.println(view.getActiveCreeps().size());
+            view.getActiveCreeps().get(i).paint(g);
         }
     }
 }

@@ -5,6 +5,8 @@
  */
 package Model.Creeps;
 
+import Model.Levels.GridCoordinates;
+
 /**
  *
  * @author Jordan
@@ -34,5 +36,8 @@ public abstract class Creep{
     int plunder;
     public int yloc;
     public int xloc;
+    public GridCoordinates nextSquare;
+    public int squareNum;
+    public boolean hasSprite;
     
 }
