@@ -17,6 +17,7 @@ public class MenuState extends State {
     public MenuState(JFrame frame){
         this.frame = frame;
         frame.getContentPane().add(new MainMenu());
+        frame.repaint();
     }
     
     private void displaylevelSelect(){

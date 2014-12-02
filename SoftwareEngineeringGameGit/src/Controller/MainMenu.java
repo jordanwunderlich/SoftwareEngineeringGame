@@ -8,6 +8,7 @@ package Controller;
 import Manager.InGameState;
 import Manager.Manager;
 import java.awt.Button;
+import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JPanel;
@@ -19,21 +20,33 @@ import javax.swing.JPanel;
 public class MainMenu extends JPanel implements MouseListener{
     
     public MainMenu(){
+        setSize(new Dimension (600, 800));
+        setLayout (null);
         tutorial = new Button("Tutorial");
+        tutorial.setBounds (150,375,75,50);
         tutorial.addMouseListener(this);
         newGame = new Button("New Game");
+        newGame.setBounds (250,375,75,50);
         newGame.addMouseListener(this);
         loadGame = new Button("Load Game");
+        loadGame.setBounds (350,375,75,50);
         loadGame.addMouseListener(this);
         options = new Button("Options");
+        options.setBounds (450,375,75,50);
         options.addMouseListener(this);
         quit = new Button("Quit");
+        quit.setBounds (550,375,75,50);
         quit.addMouseListener(this);
         add(tutorial);
         add(newGame);
         add(loadGame);
         add(options);
         add(quit);
+        tutorial.repaint();
+        newGame.repaint();
+        loadGame.repaint();
+        options.repaint();
+        quit.repaint();
         setVisible(true);
     }
     
