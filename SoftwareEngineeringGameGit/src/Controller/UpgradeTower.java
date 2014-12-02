@@ -6,6 +6,7 @@
 package Controller;
 
 import java.awt.Button;
+import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JPanel;
@@ -17,8 +18,10 @@ import javax.swing.JPanel;
 public class UpgradeTower extends JPanel implements MouseListener {
 
 public UpgradeTower () {
-    
+        setSize (new Dimension (600,800));
+        setLayout (null);
         sellTower = new Button("Sell Tower");
+        sellTower.setBounds (50,50,50,50);
         sellTower.addMouseListener(this);
         upgradeRange = new Button("Upgrade Range");
         upgradeRange.addMouseListener(this);
@@ -30,6 +33,7 @@ public UpgradeTower () {
         add(upgradeRange);
         add(upgradeSpeed);
         add(upgradeDamage);
+        sellTower.repaint();
         setVisible(true);
     }
 
