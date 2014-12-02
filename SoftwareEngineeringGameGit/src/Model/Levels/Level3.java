@@ -88,17 +88,17 @@ public class Level3 extends Level {
         path.add(new GridCoordinates(3, 8));
         path.add(new GridCoordinates(3, 7));
         path.add(new GridCoordinates(4, 7));
-        path.add(new GridCoordinates(4, 8));
-        path.add(new GridCoordinates(5, 8));
-        path.add(new GridCoordinates(6, 8));
-        path.add(new GridCoordinates(7, 8));
-        path.add(new GridCoordinates(8, 8));
-        path.add(new GridCoordinates(9, 8));
-        path.add(new GridCoordinates(10, 8));
-        path.add(new GridCoordinates(11, 8));
-        path.add(new GridCoordinates(12, 8));
-        path.add(new GridCoordinates(12, 7));
+        path.add(new GridCoordinates(4, 6));
+        path.add(new GridCoordinates(5, 6));
+        path.add(new GridCoordinates(6, 6));
+        path.add(new GridCoordinates(7, 6));
+        path.add(new GridCoordinates(8, 6));
+        path.add(new GridCoordinates(9, 6));
+        path.add(new GridCoordinates(10, 6));
+        path.add(new GridCoordinates(11, 6));
         path.add(new GridCoordinates(12, 6));
+        path.add(new GridCoordinates(12, 5));
+        path.add(new GridCoordinates(12, 4));
         castle = new GridCoordinates(10, 2);
         for(int a = 0; a < path.size(); a++){
             grid[path.get(a).getX()][path.get(a).getY()].setType(GridSquare.Type.PATH);
