@@ -7,6 +7,7 @@
 package Controller;
 
 import java.awt.Button;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -20,18 +21,28 @@ import javax.swing.JPanel;
 
     public UnlockTower() {
 
+        setSize(new Dimension (600, 800));
+        setLayout (null);
         basicTower = new Button("Basic Tower");
+        basicTower.setBounds (150,375,75,50);
         basicTower.addMouseListener(this);
         longRangeTower = new Button("Long Range Tower");
+        longRangeTower.setBounds (250,375,75,50);
         longRangeTower.addMouseListener(this);
         slowTower = new Button("Slow Tower");
+        slowTower.setBounds (350,375,75,50);
         slowTower.addMouseListener(this);
-        areaOfEffectTower = new Button("Area of Effect Tower");
+        areaOfEffectTower = new Button("AOE Tower");
+        areaOfEffectTower.setBounds (450,375,75,50);
         areaOfEffectTower.addMouseListener(this);
         add(basicTower);
         add(longRangeTower);
         add(slowTower);
         add(areaOfEffectTower);
+        basicTower.repaint();
+        longRangeTower.repaint();
+        slowTower.repaint();
+        areaOfEffectTower.repaint();
         setVisible(true);
     }
 
