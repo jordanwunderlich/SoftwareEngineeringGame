@@ -15,6 +15,10 @@ public abstract class Tower {
         return range;
     }
     
+    public int getDamage(){
+        return damage;
+    }
+    
     private void augmentStat(String stat){
         throw new UnsupportedOperationException("Not supported yet.");
     }
@@ -27,7 +31,7 @@ public abstract class Tower {
         throw new UnsupportedOperationException("Not supported yet.");
     }
     
-    int damage;
+    protected int damage;
     int range;
     int cost;
     int rof;
