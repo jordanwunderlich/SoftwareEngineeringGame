@@ -6,6 +6,7 @@
 package Controller;
 
 import java.awt.Button;
+import java.awt.Dimension;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.JPanel;
@@ -18,18 +19,28 @@ public class PauseMenu extends JPanel implements MouseListener {
 
     public PauseMenu() {
 
+        setSize(new Dimension (600, 800));
+        setLayout (null);
         resume = new Button("Resume");
+        resume.setBounds (357,162,85,50);
         resume.addMouseListener(this);
-        restartRound = new Button("Restart Round");
+        restartRound = new Button("Restart Level");
+        restartRound.setBounds (357,237,85,50);
         restartRound.addMouseListener(this);
-        returntoLevelSelect = new Button("Return to Level Select");
+        returntoLevelSelect = new Button("Level Select");
+        returntoLevelSelect.setBounds (357,312,85,50);
         returntoLevelSelect.addMouseListener(this);
         quit = new Button("Quit");
+        quit.setBounds (357,387,85,50);
         quit.addMouseListener(this);
         add(resume);
         add(restartRound);
         add(returntoLevelSelect);
         add(quit);
+        resume.repaint();
+        restartRound.repaint();
+        returntoLevelSelect.repaint();
+        quit.repaint();
         setVisible(true);
     }
 

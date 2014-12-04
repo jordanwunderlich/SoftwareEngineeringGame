@@ -7,8 +7,8 @@ package Model.Levels;
 
 import Model.GridSquare;
 import Model.Creeps.Creep;
-import Model.Map;
 import Model.Projectile;
+import Model.Towers.Tower;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
@@ -35,17 +35,54 @@ public class Level {
                 waveIsOver = true;
             }
             if (!waveIsOver) {
-                creeps.add(waves.get(currentWave).getCreep(currentCreep));
-                creeps.get(currentCreep).xloc = path.get(0).getX() * 32;
-                creeps.get(currentCreep).yloc = path.get(0).getY() * 32;
-                creeps.get(currentCreep).squareNum = 2;
-                creeps.get(currentCreep).nextSquare = path.get(1);
+                Creep tempCreep = waves.get(currentWave).getCreep(currentCreep);
+                creeps.add(tempCreep);
+                tempCreep.xloc = path.get(0).getX() * 32;
+                tempCreep.yloc = path.get(0).getY() * 32;
+                tempCreep.squareNum = 2;
+                tempCreep.nextSquare = path.get(1);
                 currentCreep++;
             }
             numUpdated = 0;
         }
         if (numUpdated / 30 == Math.round(numUpdated / 30)) {
             moveCreeps();
+        }
+        shootCreeps();
+        for(int a = 0; a < creeps.size(); a++) {
+            if(creeps.get(a).isHurt){
+                creeps.get(a).hurtTimer--;
+                if(creeps.get(a).hurtTimer == 0){
+                    creeps.get(a).isHurt = false;
+                }
+            }
+        }
+    }
+    
+    private void shootCreeps(){
+        for (int rows = 0; rows < 25; rows++) {
+            for (int cols = 0; cols < 18; cols++) {
+                if (grid[rows][cols].getTower() != null) {
+                    Tower tower = grid[rows][cols].getTower();
+                    if (tower.timeLeft != 0) {
+                        tower.timeLeft--;
+                    }
+                    int range = tower.getRange();
+                    for (int a = 0; a < creeps.size(); a++) {
+                        if (tower.timeLeft == 0) {
+                            if (Math.abs(creeps.get(a).xloc - grid[rows][cols].xloc) + Math.abs(creeps.get(a).yloc - grid[rows][cols].yloc) < range * 32) {
+                                tower.timeLeft = tower.rechargeTime;
+                                creeps.get(a).setHealth(creeps.get(a).getHealth()-tower.getDamage());
+                                creeps.get(a).isHurt = true;
+                                creeps.get(a).hurtTimer = 10;
+                                if(creeps.get(a).getHealth() < 0){
+                                    creeps.remove(a);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -63,6 +100,9 @@ public class Level {
                 } else {
                     creeps.get(i).yloc++;
                 }
+            } else if(creeps.get(i).squareNum == path.size()){
+                gold = gold - creeps.get(i).getPlunder();
+                creeps.remove(i);
             } else {
                 creeps.get(i).nextSquare = path.get(creeps.get(i).squareNum++);
             }

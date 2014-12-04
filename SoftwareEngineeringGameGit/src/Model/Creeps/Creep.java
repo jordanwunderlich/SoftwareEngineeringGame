@@ -29,11 +29,17 @@ public abstract class Creep{
         return scrap;
     }
     
+    public int getPlunder() {
+        return plunder;
+    }
+    
+    public boolean isHurt = false;
+    public int hurtTimer;
     protected int maxHealth;
     protected int health;
     int speed;
     protected int scrap;
-    int plunder;
+    protected int plunder;
     public int yloc;
     public int xloc;
     public GridCoordinates nextSquare;

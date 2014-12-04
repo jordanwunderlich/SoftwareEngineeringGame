@@ -6,8 +6,10 @@
 package Manager;
 
 import Controller.GridController;
+import Model.GridSquare;
 import Model.Levels.Level;
 import Model.Levels.Level1;
+import View.CastleView;
 import View.GridView;
 import View.InGameView;
 
@@ -27,14 +29,17 @@ public class InGameState extends State {
                 
                 //GridSquare square = new GridSquare();
                 GridView squareView = new GridView(level.getGrid()[rows][cols]);
-                squareView.setX(rows*32);
-                squareView.setY(cols*32);
-                //squareView.setLocation(rows*32, cols*32);
+                level.getGrid()[rows][cols].xloc = rows*32;
+                level.getGrid()[rows][cols].yloc = cols*32;
+                squareView.setLocation(rows*32, cols*32);
+                
                 squareView.addMouseListener(new GridController(level.getGrid()[rows][cols], squareView));             
                 panel.add(squareView);
                 //panel.map.add(squareView);
             }
         }
+        CastleView castleView = new CastleView(level.getCastle());
+        panel.castle = castleView;
         panel.repaint();
         panel.animate();
         //panel.repaint();
