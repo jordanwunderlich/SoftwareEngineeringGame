@@ -6,6 +6,8 @@
 package Manager;
 
 import Model.Levels.Level;
+import View.BangView;
+import View.CastleView;
 import View.GridView;
 import View.InGameView;
 import java.awt.Color;
@@ -33,13 +35,14 @@ public class GamePanel extends JPanel implements KeyListener {
 
     public ArrayList<GridView> map;
     public ArrayList<Component> things;
+    public CastleView castle;
     private Level level;
     private InGameView view;
 
     public GamePanel(Level level, InGameView view) {
         this.level = level;
         this.view = view;
-        
+
         setBackground(Color.WHITE); // white background
         setSize(new Dimension(PWIDTH, PHEIGHT));
 
@@ -53,8 +56,7 @@ public class GamePanel extends JPanel implements KeyListener {
 
         map = new ArrayList<>();
         things = new ArrayList<>();
-        
-        
+
     }
 
     public void stopGame() // called by the user to stop execution
@@ -91,7 +93,6 @@ public class GamePanel extends JPanel implements KeyListener {
         }
 
         //System.exit(0);
-
     } // end of run( )
 
     private void gameUpdate() {
@@ -116,13 +117,13 @@ public class GamePanel extends JPanel implements KeyListener {
     @Override
     public void keyReleased(KeyEvent e) {
     }
-    
+
     @Override
-    public Component add(Component j){
+    public Component add(Component j) {
         super.add(j);
-        if(j instanceof GridView){
-            map.add((GridView)j);
-        } else{
+        if (j instanceof GridView) {
+            map.add((GridView) j);
+        } else {
             things.add(j);
         }
         return j;
@@ -142,9 +143,20 @@ public class GamePanel extends JPanel implements KeyListener {
 //                things.get(i).paint(g);
 //            }
 //        }
-        for(int i = 0; i < view.getActiveCreeps().size(); i++){
-            System.out.println(view.getActiveCreeps().size());
-            view.getActiveCreeps().get(i).paint(g);
+        if(castle != null)
+            castle.paint(g);
+        if (!view.getActiveCreeps().isEmpty()) {
+            for (int i = 0; i < view.getActiveCreeps().size(); i++) {
+                view.getActiveCreeps().get(i).paint(g);
+            }
         }
+        if(!view.getBangs().isEmpty()){
+            ArrayList<BangView> bangs = view.getBangs();
+            for (int i = 0; i < bangs.size(); i++){
+                add(bangs.get(i));
+                bangs.get(i).paint(g);
+            }
+        }
+        view.getGold().paint(g);
     }
 }

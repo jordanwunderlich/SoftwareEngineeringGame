@@ -5,85 +5,67 @@
  */
 package Controller;
 
-import java.awt.Button;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import javax.swing.JPanel;
+import Model.GridSquare;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JMenuItem;
+import javax.swing.JPopupMenu;
 
 /**
  *
  * @author acer
  */
-public class UpgradeTower extends JPanel implements MouseListener {
-
-public UpgradeTower () {
+public class UpgradeTower extends JPopupMenu implements ActionListener{
     
-        sellTower = new Button("Sell Tower");
-        sellTower.addMouseListener(this);
-        upgradeRange = new Button("Upgrade Range");
-        upgradeRange.addMouseListener(this);
-        upgradeSpeed = new Button("Upgrade Speed");
-        upgradeSpeed.addMouseListener(this);
-        upgradeDamage = new Button("Upgrade Damage");
-        upgradeDamage.addMouseListener(this);
+    private JMenuItem sellTower;
+    private JMenuItem upgradeRange;
+    private JMenuItem upgradeSpeed;
+    private JMenuItem upgradeDamage;
+    private GridSquare gridsquare;
+    
+    public UpgradeTower(GridSquare gridsquare){
+        this.gridsquare = gridsquare;
+        sellTower = new JMenuItem("Sell Tower");
+        upgradeRange = new JMenuItem("Upgrade Range");
+        upgradeSpeed = new JMenuItem("Upgrade Speed");
+        upgradeDamage = new JMenuItem("Upgrade Damage");
+        sellTower.addActionListener(this);
+        upgradeRange.addActionListener(this);
+        upgradeSpeed.addActionListener(this);
+        upgradeDamage.addActionListener(this);
         add(sellTower);
         add(upgradeRange);
         add(upgradeSpeed);
         add(upgradeDamage);
-        setVisible(true);
+    }
+    
+    private void sellTower(){
+        
+    }
+    
+    private void upgradeRange(){
+        
+    }
+    
+    private void upgradeSpeed(){
+        
+    }
+    
+    private void upgradeDamage(){
+       
     }
 
-@Override
-    public void mouseClicked(MouseEvent click) {
-        if (click.getSource() == sellTower) {
-            clickedSellTower();
-        } else if (click.getSource() == upgradeRange) {
-            clickedUpgradeRange();
-        } else if (click.getSource() == upgradeSpeed) {
-            clickedUpgradeSpeed();
-        } else if (click.getSource() == upgradeDamage) {
-            clickedUpgradeDamage();
+    @Override
+    public void actionPerformed(ActionEvent ae) {
+        if (ae.getSource() == sellTower){
+            sellTower();
+        } else if (ae.getSource() == upgradeRange){
+            upgradeRange();
+        } else if (ae.getSource() == upgradeSpeed){
+            upgradeSpeed();
+        } else if (ae.getSource() == upgradeDamage){
+            upgradeDamage();
         }
     }
-
-     private void clickedSellTower(){
-        
-    }
-    
-    private void clickedUpgradeRange(){
-       
-    }
-    
-    private void clickedUpgradeSpeed(){
-       
-    }
-    
-    private void clickedUpgradeDamage(){
-        
-    }
-    
-    @Override
-    public void mousePressed(MouseEvent me) {
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent me) {
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent me) {
-    }
-
-    @Override
-    public void mouseExited(MouseEvent me) {
-    }
-
-    private Button sellTower;
-    private Button upgradeRange;
-    private Button upgradeSpeed;
-    private Button upgradeDamage;
-
-}
-
    
-
+}

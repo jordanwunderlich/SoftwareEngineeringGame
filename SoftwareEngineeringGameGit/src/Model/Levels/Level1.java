@@ -65,7 +65,7 @@ public class Level1 extends Level{
         path.add(new GridCoordinates(20, 6));
         path.add(new GridCoordinates(20, 5));
         path.add(new GridCoordinates(20, 4));
-        castle = new GridCoordinates(19, 1);
+        castle = new GridCoordinates(20, 3);
         for(int a = 0; a < path.size(); a++){
             grid[path.get(a).getX()][path.get(a).getY()].setType(GridSquare.Type.PATH);
         }

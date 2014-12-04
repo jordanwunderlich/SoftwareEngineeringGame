@@ -34,6 +34,7 @@ public class CreepSprite extends JComponent{
     
     public CreepSprite(Creep creep){
         this.creep=creep;
+        bang = new BangView(creep);
         setSize(new Dimension(32, 32));
         if(creep instanceof CreepBasic){
             try {
@@ -102,8 +103,11 @@ public class CreepSprite extends JComponent{
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(sprite, creep.xloc, creep.yloc, null);
+        this.setLocation(creep.xloc, creep.yloc);
     }
     
-    private Creep creep;
+    public Creep creep;
+    public BangView bang;
+    public boolean banged = false;
     private BufferedImage sprite;
 }

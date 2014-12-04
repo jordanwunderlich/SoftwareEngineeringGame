@@ -32,6 +32,7 @@ public class Manager {
 //        GridView temp = new GridView(new GridSquare());
 //        temp.setLocation(50,50);
 //        frame.add(temp);
+        //state = new MenuState (frame);
     }
 
     private void displaySplash() {
