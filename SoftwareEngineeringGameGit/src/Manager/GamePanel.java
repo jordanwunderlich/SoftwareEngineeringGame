@@ -6,6 +6,7 @@
 package Manager;
 
 import Model.Levels.Level;
+import View.CastleView;
 import View.GridView;
 import View.InGameView;
 import java.awt.Color;
@@ -33,6 +34,7 @@ public class GamePanel extends JPanel implements KeyListener {
 
     public ArrayList<GridView> map;
     public ArrayList<Component> things;
+    public CastleView castle;
     private Level level;
     private InGameView view;
 
@@ -142,8 +144,8 @@ public class GamePanel extends JPanel implements KeyListener {
 //                things.get(i).paint(g);
 //            }
 //        }
+        castle.paint(g);
         for(int i = 0; i < view.getActiveCreeps().size(); i++){
-            System.out.println(view.getActiveCreeps().size());
             view.getActiveCreeps().get(i).paint(g);
         }
     }

@@ -45,7 +45,6 @@ public class BuildTower extends JPopupMenu implements ActionListener{
     
     private void basicTower(){
         gridsquare.setTower(new TowerBasic());
-        System.out.println("Basic Tower clicked");
     }
     
     private void longrangeTower(){

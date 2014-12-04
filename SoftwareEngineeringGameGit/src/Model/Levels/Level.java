@@ -7,8 +7,8 @@ package Model.Levels;
 
 import Model.GridSquare;
 import Model.Creeps.Creep;
-import Model.Map;
 import Model.Projectile;
+import Model.Towers.Tower;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
@@ -30,6 +30,27 @@ public class Level {
 
     public void update() {
         numUpdated++;
+        for (int rows = 0; rows < 25; rows++) {
+            for (int cols = 0; cols < 18; cols++) {
+                if (grid[rows][cols].getTower() != null) {
+                    Tower tower = grid[rows][cols].getTower();
+                    if (tower.timeLeft != 0) {
+                        tower.timeLeft--;
+                    }
+                    int range = tower.getRange();
+                    for (int a = 0; a < creeps.size(); a++) {
+                        if (tower.timeLeft == 0) {
+                            if (Math.abs(creeps.get(a).xloc - grid[rows][cols].xloc) + Math.abs(creeps.get(a).yloc - grid[rows][cols].yloc) < range * 32) {
+                                System.out.println(creeps.get(a).xloc - grid[rows][cols].xloc);
+                                System.out.println(creeps.get(a).yloc - grid[rows][cols].yloc);
+                                tower.timeLeft = tower.rechargeTime;
+                                System.out.println("Shoot.");
+                            }
+                        }
+                    }
+                }
+            }
+        }
         if (Math.round(numUpdated - 120) == 0) {
             if (waves.get(currentWave).getSize() == currentCreep) {
                 waveIsOver = true;

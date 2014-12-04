@@ -39,6 +39,7 @@ public class CreepSprite extends JComponent{
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(sprite, creep.xloc, creep.yloc, null);
+        this.setLocation(creep.xloc, creep.yloc);
     }
     
     private Creep creep;

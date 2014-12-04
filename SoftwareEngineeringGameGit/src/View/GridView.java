@@ -23,19 +23,18 @@ public class GridView extends JComponent {
 
     public GridView(GridSquare gridSquare) {
         this.gridsquare = gridSquare;
-        
+
         setSize(new Dimension(32, 32));
         if (gridSquare.getType() == GridSquare.Type.EMPTY) {
-            if(gridSquare.getTower() instanceof TowerBasic){
+            if (gridSquare.getTower() instanceof TowerBasic) {
                 try {
-                    img = ImageIO.read(new File("EmptyGridSquare.png"));
+                    towerimg = ImageIO.read(new File("basictowertrans.png"));
                 } catch (IOException e) {
                 }
-            } else {
-                try {
-                    img = ImageIO.read(new File("EmptyGridSquare.png"));
-                } catch (IOException e) {
-                }
+            }
+            try {
+                img = ImageIO.read(new File("EmptyGridSquare.png"));
+            } catch (IOException e) {
             }
         } else if (gridSquare.getType() == GridSquare.Type.PATH) {
             try {
@@ -44,30 +43,26 @@ public class GridView extends JComponent {
             }
         }
     }
-    
-    public int getX(){
-        return gridsquare.xloc;
-    }
-    
-    public int getY(){
-        return gridsquare.yloc;
-    }
-    
-    public void setX(int x){
-        gridsquare.xloc = x;
-    }
-    
-    public void setY(int y){
-        gridsquare.yloc = y;
-    }
 
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(img, gridsquare.xloc, gridsquare.yloc, null);
+        if(towerimg == null && gridsquare.getTower() != null){
+            if(gridsquare.getTower() instanceof TowerBasic){
+                try {
+                    towerimg = ImageIO.read(new File("basictowertrans.png"));
+                } catch (IOException e) {
+                }
+            }
+        }
+        if(towerimg != null){
+            g.drawImage(towerimg, gridsquare.xloc, gridsquare.yloc, null);
+        }
     }
-    
+
     GridSquare gridsquare;
     BufferedImage img;
+    BufferedImage towerimg = null;
 
 }

@@ -11,6 +11,10 @@ package Model.Towers;
  */
 public abstract class Tower {
     
+    public int getRange(){
+        return range;
+    }
+    
     private void augmentStat(String stat){
         throw new UnsupportedOperationException("Not supported yet.");
     }
@@ -27,6 +31,8 @@ public abstract class Tower {
     int range;
     int cost;
     int rof;
+    public int rechargeTime;
+    public int timeLeft;
     boolean slows;
     boolean aoe;
     
