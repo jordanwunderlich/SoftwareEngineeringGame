@@ -35,11 +35,12 @@ public class Level {
                 waveIsOver = true;
             }
             if (!waveIsOver) {
-                creeps.add(waves.get(currentWave).getCreep(currentCreep));
-                creeps.get(currentCreep).xloc = path.get(0).getX() * 32;
-                creeps.get(currentCreep).yloc = path.get(0).getY() * 32;
-                creeps.get(currentCreep).squareNum = 2;
-                creeps.get(currentCreep).nextSquare = path.get(1);
+                Creep tempCreep = waves.get(currentWave).getCreep(currentCreep);
+                creeps.add(tempCreep);
+                tempCreep.xloc = path.get(0).getX() * 32;
+                tempCreep.yloc = path.get(0).getY() * 32;
+                tempCreep.squareNum = 2;
+                tempCreep.nextSquare = path.get(1);
                 currentCreep++;
             }
             numUpdated = 0;
@@ -48,6 +49,14 @@ public class Level {
             moveCreeps();
         }
         shootCreeps();
+        for(int a = 0; a < creeps.size(); a++) {
+            if(creeps.get(a).isHurt){
+                creeps.get(a).hurtTimer--;
+                if(creeps.get(a).hurtTimer == 0){
+                    creeps.get(a).isHurt = false;
+                }
+            }
+        }
     }
     
     private void shootCreeps(){
@@ -64,6 +73,8 @@ public class Level {
                             if (Math.abs(creeps.get(a).xloc - grid[rows][cols].xloc) + Math.abs(creeps.get(a).yloc - grid[rows][cols].yloc) < range * 32) {
                                 tower.timeLeft = tower.rechargeTime;
                                 creeps.get(a).setHealth(creeps.get(a).getHealth()-tower.getDamage());
+                                creeps.get(a).isHurt = true;
+                                creeps.get(a).hurtTimer = 10;
                                 if(creeps.get(a).getHealth() < 0){
                                     creeps.remove(a);
                                 }

@@ -33,6 +33,8 @@ public abstract class Creep{
         return plunder;
     }
     
+    public boolean isHurt = false;
+    public int hurtTimer;
     protected int maxHealth;
     protected int health;
     int speed;

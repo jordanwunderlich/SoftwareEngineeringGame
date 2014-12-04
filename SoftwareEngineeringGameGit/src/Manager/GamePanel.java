@@ -6,6 +6,7 @@
 package Manager;
 
 import Model.Levels.Level;
+import View.BangView;
 import View.CastleView;
 import View.GridView;
 import View.InGameView;
@@ -142,10 +143,18 @@ public class GamePanel extends JPanel implements KeyListener {
 //                things.get(i).paint(g);
 //            }
 //        }
-        castle.paint(g);
+        if(castle != null)
+            castle.paint(g);
         if (!view.getActiveCreeps().isEmpty()) {
             for (int i = 0; i < view.getActiveCreeps().size(); i++) {
                 view.getActiveCreeps().get(i).paint(g);
+            }
+        }
+        if(!view.getBangs().isEmpty()){
+            ArrayList<BangView> bangs = view.getBangs();
+            for (int i = 0; i < bangs.size(); i++){
+                add(bangs.get(i));
+                bangs.get(i).paint(g);
             }
         }
         view.getGold().paint(g);
